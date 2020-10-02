@@ -1,0 +1,18 @@
+.coral3-Icon--custom_smallalpha:before {
+    content: "abc";
+    font-size: 14px;
+    top: -10px;
+}
+
+.coral3-Icon--custom_smallroman:before {
+    content: "ii";
+    font-size: 14px;
+    top: -10px;
+}
+
+.coral3-Icon--custom_bigroman:before {
+    content: "II";
+    font-size: 14px;
+    top: -10px;
+}
+

@@ -1,0 +1,15 @@
+div.search .clear-filter {
+    position: absolute;
+    right: 2.5rem;
+    top: 0;
+    padding: 0.5rem 0.3rem;
+    font-weight: bold;
+    line-height: 100%;
+    display: none; // Initial invisible
+}
+div.search input[type=text] {
+    padding-right: 3.5rem !important;
+}
+div.search input[type=text]::-ms-clear {
+    display: none;
+}

@@ -1,0 +1,369 @@
+.rte-forcedborder,.rte-forcedborder TD,.rte-forcedborder TH {
+  border: .0625rem dotted #d3d3d3;
+}
+
+.rte-anchor {
+  width: .6875rem;
+  line-height: .375rem;
+  overflow: hidden;
+  background: url("richtext/resources/images/anchor.png") no-repeat bottom left;
+  height: .75rem;
+  padding-right: .1875rem;
+  display: inline-block;
+}
+
+.rte [contenteditable="true"].is-edited img {
+  cursor: default;
+}
+
+img.rte-placeholder {
+  width: 1rem;
+  min-width: 1rem;
+  max-width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  max-height: 1rem;
+  padding-left: .125rem;
+  padding-right: .125rem;
+  background: url("richtext/resources/images/genhtml-placeholder.svg") no-repeat bottom center;
+}
+
+.rte-tableselection {
+  background-color: #326ec8;
+}
+
+.rte[contenteditable=true] span.jpn-word-wrap {
+  background-color: #fdf;
+  display: inline-block;
+}
+
+.rte-ui .rte-toolbar {
+  display: none;
+  line-height: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.rte-ui .rte-toolbar.is-floating {
+  -webkit-box-shadow: 0 .1875rem .3125rem 0 rgba(0,0,0,0.3);
+  box-shadow: 0 .1875rem .3125rem 0 rgba(0,0,0,0.3);
+  position: absolute;
+  background-color: #fff;
+}
+
+.rte-ui .rte-toolbar.is-active {
+  display: block;
+}
+
+.rte-ui .rte-toolbar button {
+  height: 2.75rem;
+}
+
+.rte-ui .rte-toolbar button.is-itemHighlighted:before {
+  color: #2e6ccb;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+
+.rte-ui .rte-toolbar button.rte--modechanger {
+  background-color: #f0f0f0;
+  color: #646464;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+
+.rte-ui .rte-toolbar button .rte-openIcon {
+  margin-left: .3125rem;
+}
+
+.rte-ui .rte-popover {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  min-width: 0;
+}
+
+.rte-ui .rte-popover .rte-toolbar-item {
+  height: 44px;
+}
+
+.rte-ui .rte-popover coral-buttonlist {
+  width: 9.125rem;
+}
+
+.coral--dark .rte-ui .rte-toolbar.is-floating,.coral--dark.rte-ui .rte-toolbar.is-floating {
+  background-color: #454545;
+}
+
+.coral--dark .rte-ui .rte-toolbar button.rte--multiSelect.is-itemsSelected,.coral--dark.rte-ui .rte-toolbar button.rte--multiSelect.is-itemsSelected {
+  background-color: #2b2b2b;
+}
+
+.coral--dark .rte-ui .rte-toolbar button.is-itemHighlighted:before,.coral--dark.rte-ui .rte-toolbar button.is-itemHighlighted:before {
+  color: #fff;
+}
+
+.coral--dark .rte-ui .rte-toolbar button.rte--modechanger,.coral--dark.rte-ui .rte-toolbar button.rte--modechanger {
+  background-color: #636263;
+  color: #fff;
+}
+
+.rte-dialog div.rte-dialog-table {
+  display: table;
+  width: 100%;
+}
+
+.rte-dialog div.rte-dialog-headerContainer {
+  display: table-row;
+  padding: .125rem;
+}
+
+.rte-dialog div.rte-dialog-columnContainer {
+  display: table-row;
+  padding: .125rem;
+}
+
+.rte-dialog div.rte-dialog-rowContainer {
+  display: table-row;
+  padding: .125rem;
+}
+
+.rte-dialog div.rte-dialog-column {
+  display: table-cell;
+  vertical-align: middle;
+  padding: .25rem;
+  line-height: 2.375rem;
+}
+
+.rte-dialog div.rte-dialog-row {
+  padding: .25rem;
+}
+
+.rte-dialog div.rte-dialog-innerTable {
+  display: table;
+  width: 100%;
+}
+
+.rte-dialog .rte--small {
+  min-width: 3.75rem;
+  width: 3.75rem;
+}
+
+.rte-dialog textarea.rte--medium {
+  min-width: 14.125rem;
+  width: 14.125rem;
+  min-height: 3.75rem;
+  height: 3.75rem;
+}
+
+.rte-dialog.transparent {
+  opacity: .2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+coral-alert.rte-globalAlert {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 1500;
+}
+
+.rte-dialog--find div.rte-dialog-column {
+  line-height: 1.0625rem;
+}
+
+.rte-dialog--pastewordhtml iframe {
+  width: 31.25rem;
+}
+
+.rte-dialog--pasteplaintext textArea {
+  height: 9.375rem;
+  width: 31.25rem;
+  resize: none;
+}
+
+.rte-dialog--spellchecker {
+  width: auto;
+}
+
+.rte-dialog--spellchecker .rte-dialog-columnContainer .rte-dialog-column--spellchecker:not(:last-child) {
+  border-right: .0625rem;
+  border-right-style: solid;
+  border-right-color: #d0d0d0;
+}
+
+.rte-dialog--spellchecker div.rte-dialog-column--spellchecker .rte-dialogButton {
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 12.5rem;
+}
+
+.rte-dialog--specialchars .rte-dialog-column--specialchars .rte-specialchars-selector {
+  width: 18.125rem;
+  height: 3.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 1px;
+}
+
+.rte-dialog--specialchars .rte-dialog-column--specialchars .rte-specialchars-selector .rte-dialog-column {
+  padding: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: .0625rem solid #e9e9e9;
+  border-right: .0625rem solid #e9e9e9;
+}
+
+.rte-dialog--specialchars .rte-dialog-column--specialchars .rte-specialchars-selector .rte-dialog-column:hover {
+  color: rgba(0,0,0,0.8);
+}
+
+.rte-dialog.rte-dialog--tableprops .rte--large {
+  width: 99%;
+}
+
+.rte-dialog.rte-dialog--tableprops .rte-dialog-column input[is=coral-textfield] {
+  margin: .125rem;
+}
+
+.rte-dialog.rte-dialog--tableprops .rte-dialog-column--headerField {
+  margin: .125rem;
+}
+
+.rte-dialog.rte-dialog--tableprops .rte-dialog-column--caption {
+  vertical-align: baseline;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops {
+  min-width: 27.1875rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte--large {
+  width: 99%;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-column input[is=coral-textfield] {
+  margin: .125rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte--large {
+  width: 98%;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-select--cellHorizontalAlignment,.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-select--cellVerticalAlignment {
+  width: 15rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-select--cellType {
+  width: 19.6875rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-column--rightAligned {
+  text-align: right;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .coral-Form-fieldinfo {
+  vertical-align: middle;
+  padding-left: .3125rem;
+  padding-right: .3125rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-tabview {
+  margin: .5rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-select--scopeAttribute {
+  width: 100%;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-dialog-column--cellType {
+  width: 5rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops .rte-Switch {
+  padding-left: .625rem;
+}
+
+.rte-dialog.rte-dialog--tableandcellprops input[is=coral-textfield].rte-Textfield--cellId {
+  width: 9.375rem;
+}
+
+.rte-dialog.rte-dialog--link .rte-dialog-column--rightAligned {
+  text-align: right;
+}
+
+.coral--dark .rte-dialog.rte-dialog--specialchars .rte-dialog-column--specialchars .rte-specialchars-selector .rte-dialog-column {
+  border-right-color: #000;
+  border-bottom-color: #000;
+}
+
+.coral--dark .rte-dialog.rte-dialog--specialchars .rte-dialog-column--specialchars .rte-specialchars-selector .rte-dialog-column:hover {
+  color: #fff;
+}
+
+.rte-fullscreen-dialog coral-dialog-content {
+  text-align: center;
+}
+
+.rte-fullscreen-dialog coral-dialog-content .rte-fullscreen-richtextContainer {
+  display: inline-block;
+  width: 68.36%;
+  overflow-x: auto;
+}
+
+.rte-fullscreen-dialog coral-dialog-content .rte-ui {
+  text-align: left;
+}
+
+.rte-fullscreen-dialog .rte-editorWrapper {
+  text-align: left;
+  height: 35rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 1px;
+}
+
+.rte-fullscreen-dialog .rte-editorWrapper .rte-editor {
+  height: 94%;
+  overflow-y: auto;
+  border-radius: .25rem;
+}
+
+.rte-fullscreen-dialog .rte-editorWrapper .rte-editor.is-edited {
+  outline: none;
+  -webkit-box-shadow: 0 0 .1875rem #326ec8;
+  box-shadow: 0 0 .1875rem #326ec8;
+  border: .0625rem solid #326ec8;
+}
+
+.rte-fullscreen-dialog .rte-editorWrapper .rte-editor span.jpn-word-wrap {
+  display: inline-block;
+  background-color: #fdf;
+}
+
+.rte-fullscreen-dialog .rte-editorWrapper .rte-sourceEditor {
+  width: 98%;
+  height: 98%;
+  resize: none;
+}
+
+.coral--dark.rte-fullscreen-dialog .rte-editorWrapper .rte-editor.is-edited,.coral--dark. rte-fullscreen-dialog .rte-editorWrapper .rte-editor.is-edited {
+  outline: none;
+  -webkit-box-shadow: 0 0 .1875rem #87beff;
+  box-shadow: 0 0 .1875rem #87beff;
+  border: .0625rem solid #87beff;
+}

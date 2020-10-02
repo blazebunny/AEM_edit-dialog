@@ -1,0 +1,1155 @@
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(window) {
+    'use strict';
+
+    window.CQ = window.CQ || {};
+    window.CQ.screens = window.CQ.screens || {};
+    window.CQ.screens.dcc = window.CQ.screens.dcc || {};
+
+}(window));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2017 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc) {
+    'use strict';
+
+    dcc.constants = Object.create(null);
+
+    Object.defineProperties(dcc.constants, {
+        'RT_APPLICATION': {
+            value: 'screens/core/components/app',
+            writable: false,
+            enumerable: true
+        },
+        'RT_APPLICATION_CHANNEL': {
+            value: 'screens/core/components/appchannel',
+            writable: false,
+            enumerable: true
+        },
+        'RT_APPLICATION_FOLDER': {
+            value: 'screens/core/components/appfolder',
+            writable: false,
+            enumerable: true
+        },
+        'RT_CHANNEL': {
+            value: 'screens/core/components/channel',
+            writable: false,
+            enumerable: true
+        },
+        'RT_CHANNEL_FOLDER': {
+            value: 'screens/core/components/channelfolder',
+            writable: false,
+            enumerable: true
+        },
+        'RT_DEVICE': {
+            value: 'screens/core/components/device',
+            writable: false,
+            enumerable: true
+        },
+        'RT_DEVICE_FOLDER': {
+            value: 'screens/core/components/devicefolder',
+            writable: false,
+            enumerable: true
+        },
+        'RT_DEVICE_CONFIG': {
+            value: 'screens/core/components/deviceconfig',
+            writable: false,
+            enumerable: true
+        },
+        'RT_DISPLAY': {
+            value: 'screens/core/components/display',
+            writable: false,
+            enumerable: true
+        },
+        'RT_LOCATION': {
+            value: 'screens/core/components/location',
+            writable: false,
+            enumerable: true
+        },
+        'RT_LOCATION_FOLDER': {
+            value: 'screens/core/components/locationfolder',
+            writable: false,
+            enumerable: true
+        },
+        'RT_SCREEN': {
+            value: 'screens/core/components/screen',
+            writable: false,
+            enumerable: true
+        },
+        'RT_SEQUENCE_CHANNEL': {
+            value: 'screens/core/components/sequencechannel',
+            writable: false,
+            enumerable: true
+        },
+        'RT_PROJECT': {
+            value: 'screens/core/components/project',
+            writable: false,
+            enumerable: true
+        },
+        'RT_SCHEDULE': {
+            value: 'screens/core/components/schedule',
+            writable: false,
+            enumerable: true
+        },
+        'RT_SCHEDULE_FOLDER': {
+            value: 'screens/core/components/schedulefolder',
+            writable: false,
+            enumerable: true
+        },
+        'RT_SERVICE': {
+            value: 'screens/core/components/service',
+            writable: false,
+            enumerable: true
+        }
+    });
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2018 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+ (function(dcc, $, URITemplate) {
+    'use strict';
+
+    dcc.util = Object.create(null);
+
+    dcc.util.generateId = function(string) {
+        return string.toLowerCase()
+            .replace(/[^a-z0-9_\-]/g, '-') // Only keep alphanumerical characters
+            .replace(/-+/g, '-');
+    };
+
+}(window.CQ.screens.dcc, Granite.$, Granite.URITemplate));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc, http) {
+    'use strict';
+
+    // namespace
+    dcc.navigation = {};
+
+    dcc.navigation.goTo = function(url) {
+        var externalisedUrl = http.externalize(url);
+        window.location = externalisedUrl;
+    };
+
+}(window.CQ.screens.dcc, Granite.HTTP));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc) {
+    'use strict';
+
+    // namespace
+    dcc.mobileapps = {};
+
+    /**
+     * The path to the Browser Firmware content sync config.
+     * @constant
+     * @type {string}
+     */
+    var BROWSER_FIRMWARE_CONFIG_PATH = '/libs/screens/player/browser/pge-app/offline-config';
+
+   /**
+     * Actions that are accepted by "CONTENTSYNC_CONSOLE_ENDPOINT".
+     * @constant
+     * @type {string}
+     */
+    var ACTION_CLEAR = 'clear';
+    var ACTION_UPDATE = 'update';
+
+   /**
+     * AEM offers an endpoint where contentsync packages can be maintained.
+     * @constant
+     * @type {string}
+     */
+    var CONTENTSYNC_CONSOLE_ENDPOINT = '/libs/cq/contentsync/console/configs.json';
+
+    /**
+     * Posts an action to the AEM-ContentSync endpoint in order to clear or update the
+     * Phonegap Enterprise Configurations for the Firmware resp. Shell.
+     *
+     * @private
+     * @param {string} configPath The Config path to either Firmware or Shell.
+     * @param {string} action The action that will be consumed by the AEM-ContentSync endpoint.
+     * @returns {Promise} The resolved response object.
+     */
+    function postAction(configPath, action) {
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(CONTENTSYNC_CONSOLE_ENDPOINT, {
+                type: 'POST',
+                data: {
+                    action: action,
+                    path: configPath
+                },
+                success: resolve,
+                error: function(xhr, name, error) {
+                    if (xhr && xhr.status === 200 && xhr.responseText === '') {
+                        // special case: the servlets are not properly implemented and may return an empty result instead of an empty object
+                        // this is an issue under certain circumstances
+                        // (like behind a dispatcher, the content type is automatically added and jquery fails to parse the response)
+                        // see NPR-15428
+                        resolve();
+                    } else {
+                        var msg = 'Error while posting to ' + CONTENTSYNC_CONSOLE_ENDPOINT + ': ' + (error ? error.message : 'Unknown error');
+                        reject(new Error(msg));
+                    }
+                }
+            });
+        });
+    }
+
+    /**
+     * Clears and updates the ContentSync Configurations of Browser Firmware
+     * It uses the ContentSync API in order to do so. Excecution-order is important:
+     * 1) clear
+     * 2) update
+     *
+     * @returns {Promise} The resolved promise in case all actions have been performed.
+     */
+    dcc.mobileapps.clearAndUpdateConfigs = function() {
+        // Clear Configs in parallel so it is quicker.
+        var clearPromises = Promise.all([
+            postAction(BROWSER_FIRMWARE_CONFIG_PATH, ACTION_CLEAR)
+        ]);
+
+        // Update sequentially to be sure the packages are finished by the end of the Promise.
+        return clearPromises
+          .then(function() {
+              return postAction(BROWSER_FIRMWARE_CONFIG_PATH, ACTION_UPDATE);
+          });
+    };
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(window) {
+    'use strict';
+
+    window.CQ.screens.dcc.playerCommands = {};
+
+}(window));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+/* Promise */
+
+(function(dcc) {
+    'use strict';
+
+    dcc.playerCommands.COMMANDS = Object.create(null);
+
+    Object.defineProperties(dcc.playerCommands.COMMANDS, {
+        'CONFIG_UPDATE': {
+            value: 'config-update',
+            writable: false,
+            enumerable: true
+        },
+        'PREFERENCES_UPDATE': {
+            value: 'preferences-update',
+            writable: false,
+            enumerable: true
+        },
+        'STATUS_INFO': {
+            value: 'statusinfo',
+            writable: false,
+            enumerable: true
+        },
+        'FIRMWARE_UPDATE': {
+            value: 'update',
+            writable: false,
+            enumerable: true
+        },
+        'REQUEST_LOGS': {
+            value: 'logs',
+            writable: false,
+            enumerable: true
+        },
+        'RESTART_PLAYER': {
+            value: 'reboot',
+            writable: false,
+            enumerable: true
+        },
+        'SCREENSHOT': {
+            value: 'screenshot',
+            writable: false,
+            enumerable: true
+        },
+        'CLEAR_CACHE_ALL': {
+            value: 'clear-all',
+            writable: false,
+            enumerable: true
+        }
+    });
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+/* Promise */
+
+(function(playerCommands) {
+    'use strict';
+
+    var DEVICE_API_PATH_PREFIX = '/api/screens-dcc/devices/';
+
+    function getDeviceProfilePath(properties) {
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(properties.location), {
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    resolve({
+                        devicePath: properties.devicePath,
+                        deviceProfilePath: data.properties.deviceProfilePath,
+                        deviceId: properties.deviceId
+                    });
+                },
+                error: function(error) {
+                    reject(error);
+                }
+            });
+        });
+    }
+
+    playerCommands.sendCommandToDevice = function(deviceId, command, payload) {
+        return new Promise(function(resolve, reject) {
+            var devicePath = DEVICE_API_PATH_PREFIX + deviceId + '.json';
+
+            var messageData = {
+                command: command
+            };
+            if (payload) {
+                messageData.command = JSON.stringify({
+                    command: command,
+                    command_payload: payload
+                });
+            }
+
+            Granite.$.ajax(Granite.HTTP.externalize(devicePath), {
+                type: 'PUT',
+                dataType: 'json',
+                data: messageData,
+                success: function(data) {
+                    resolve({
+                        location: data.properties.location,
+                        devicePath: data.properties.path,
+                        deviceId: deviceId
+                    });
+                },
+                error: function(error) {
+                    reject(error);
+                }
+            });
+        }).then(getDeviceProfilePath);
+    };
+
+}(window.CQ.screens.dcc.playerCommands));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+/* globals Promise */
+(function(dcc) {
+    'use strict';
+
+    // namespace
+    dcc.channel = {};
+
+    dcc.channel.unassignFromDisplays = function(channelPath, displays) {
+        var displaysParam = (displays || []).join(',');
+        if (!channelPath) {
+            return Promise.reject(new Error('Parameter "Channel Path" is mandatory.'));
+        }
+        if (!displaysParam) {
+            return Promise.reject(new Error('Some display is required for the unassignment.'));
+        }
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize('/api/screens' + channelPath + '.json'), {
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    ':operation': 'unassign',
+                    displays: displaysParam
+                },
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc) {
+    'use strict';
+
+    // namespace
+    dcc.channelAssignment = {};
+
+    /**
+     * The default channel assignment type (used for backwards compatibility when no type is defined).
+     * @type {String}
+     */
+    Object.defineProperties(dcc.channelAssignment, {
+        'DEFAULT_CHANNELASSIGNMENT_RESOURCE_TYPE': {
+            value: 'screens/core/components/channelassignment/absolute',
+            writable: false,
+            enumerable: true
+        }
+    });
+
+    /**
+     * Get the name of the property that contains the reference to the assigned entity.
+     *
+     * @param  {String} resourceType The resource type for the assignment
+     *
+     * @return {String} the name of the property that contains the reference to the assigned entity
+     */
+    dcc.channelAssignment.getReferencePropertyForAssignment = function(resourceType) {
+        switch (resourceType) {
+            case 'screens/core/components/channelassignment/absolute':
+                return 'path';
+            case 'screens/core/components/channelassignment/dynamic':
+                return 'name';
+            default: // Backwards compatibility
+                return 'path';
+        }
+    };
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+/* globals Promise */
+(function(dcc) {
+    'use strict';
+
+    // namespace
+    dcc.device = {};
+
+    dcc.device.delete = function(deviceName) {
+        return new Promise(function(resolve, reject) {
+            if (!deviceName) {
+                reject(new Error('Parameter "Device Name" is mandatory.'));
+            }
+            Granite.$.ajax('/api/screens-dcc/devices/' + deviceName + '.json', {
+                type: 'DELETE',
+                success: resolve,
+                error: function() {
+                    reject(new Error(deviceName));
+                }
+            });
+        });
+    };
+
+    dcc.device.activateDevice = function(devicePath) {
+        if (!devicePath) {
+            return Promise.reject(new Error('Parameter "Device path" is mandatory.'));
+        }
+
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(devicePath + '/profile_screens.activate.json'), {
+                type: 'PUT',
+                dataType: 'json',
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+    dcc.device.deactivateDevice = function(devicePath) {
+        if (!devicePath) {
+            return Promise.reject(new Error('Parameter "Device path" is mandatory.'));
+        }
+
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(devicePath + '/profile_screens.deactivate.json'), {
+                type: 'PUT',
+                dataType: 'json',
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+    dcc.device.updateProfile = function(devicePath, props) {
+        if (!devicePath) {
+            return Promise.reject(new Error('Parameter "Device path" is mandatory.'));
+        }
+        if (!props) {
+            return Promise.reject(new Error('Properties changed are mandatory.'));
+        }
+
+        // properties were modified
+        props['jcr:lastModified'] = '';
+        props['jcr:lastModifiedBy'] = '';
+
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(devicePath + '/profile_screens.json'), {
+                type: 'POST',
+                dataType: 'json',
+                data: props,
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+    dcc.device.updateConfig = function(deviceId) {
+        return new Promise(function(resolve, reject) {
+            if (!deviceId) {
+                reject(new Error('Parameter "Device Id" is mandatory.'));
+            }
+            Granite.$.ajax(Granite.HTTP.externalize('/api/screens-dcc/devices/' + deviceId + '.json'), {
+                type: 'PUT',
+                dataType: 'json',
+                data: {
+                    ':operation': 'send-command',
+                    command: 'config-update'
+                },
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+    dcc.device.bulkUpdateConfig = function(collectionId) {
+        return new Promise(function(resolve, reject) {
+            if (!collectionId) {
+                reject(new Error('Parameter "Collection Id" is mandatory.'));
+            }
+            Granite.$.ajax(Granite.HTTP.externalize('/api/screens' + collectionId + '.json'), {
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    ':operation': 'broadcast-command',
+                    command: 'config-update'
+                },
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    }
+                    catch (e) {
+                        error = xhr.statusText;
+                    }
+                    finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+    dcc.device.unassign = function(devices) {
+        if (!devices) {
+            return Promise.reject(new Error('Parameter "Devices" is mandatory.'));
+        }
+        var promises = [].concat(devices).map(function(deviceId) {
+            return new Promise(function(resolve, reject) {
+                Granite.$.ajax(Granite.HTTP.externalize('/api/screens-dcc/devices/' + deviceId), {
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    data: JSON.stringify({properties: {configPath: null} }),
+                    success: resolve,
+                    error: function() {
+                        reject(new Error(deviceId));
+                    }
+                });
+            }).then(function() {
+                return dcc.playerCommands.sendCommandToDevice(deviceId, dcc.playerCommands.COMMANDS.CONFIG_UPDATE);
+            });
+        });
+        return Promise.all(promises);
+    };
+
+}(window.CQ.screens.dcc));
+
+/*
+ *
+ *  * ADOBE CONFIDENTIAL
+ *  *
+ *  * Copyright 2016 Adobe Systems Incorporated
+ *  * All Rights Reserved.
+ *  *
+ *  * NOTICE:  All information contained herein is, and remains
+ *  * the property of Adobe Systems Incorporated and its suppliers,
+ *  * if any.  The intellectual and technical concepts contained
+ *  * herein are proprietary to Adobe Systems Incorporated and its
+ *  * suppliers and may be covered by U.S. and Foreign Patents,
+ *  * patents in process, and are protected by trade secret or copyright law.
+ *  * Dissemination of this information or reproduction of this material
+ *  * is strictly forbidden unless prior written permission is obtained
+ *  * from Adobe Systems Incorporated.
+ *
+ *
+ */
+(function(dcc, window, $) {
+    'use strict';
+
+    var ROOT_PATH = '/content/screens';
+
+    // this file contains all actions registered to foundation.collection.action.activecondition
+    dcc.activeCondition = dcc.activeCondition || {};
+
+    var registry = $(window).adaptTo('foundation-registry');
+
+    /**
+     * Activecondition to check if the current collection is the Screens root
+     *
+     * @param {String}          name        The name of the condition
+     * @param {HTMLElement}     el          The element of the <code>.foundation-collection-action</code>
+     * @param {Object}          config      The value of <code>[data-foundation-collection-action]</code>
+     * @param {HTMLElement}     collection  The <code>.foundation-collection</code> associated to the action
+     * @param {HTMLElement[]}   selections  The array of <code>.foundation-selections-item</code> elements of the collection
+     *
+     * @returns {boolean} `true` if the element should be shown, `false` otherwise
+     */
+    dcc.activeCondition.isRoot = function(name, el, config, collection, selections) {
+        return collection.dataset.foundationCollectionId === ROOT_PATH;
+    };
+
+    /**
+     * Activecondition to check if the current collection is not the Screens root
+     *
+     * @param {String}          name        The name of the condition
+     * @param {HTMLElement}     el          The element of the <code>.foundation-collection-action</code>
+     * @param {Object}          config      The value of <code>[data-foundation-collection-action]</code>
+     * @param {HTMLElement}     collection  The <code>.foundation-collection</code> associated to the action
+     * @param {HTMLElement[]}   selections  The array of <code>.foundation-selections-item</code> elements of the collection
+     *
+     * @returns {boolean} `true` if the element should be shown, `false` otherwise
+     */
+    dcc.activeCondition.isNotRoot = function(name, el, config, collection, selections) {
+        return !dcc.activeCondition.isRoot.apply(this, arguments);
+    };
+
+    registry.register('foundation.collection.action.activecondition', {
+        name: 'cq.screens.dcc.activecondition.isroot',
+        handler: dcc.activeCondition.isRoot
+    });
+
+    registry.register('foundation.collection.action.activecondition', {
+        name: 'cq.screens.dcc.activecondition.isnotroot',
+        handler: dcc.activeCondition.isNotRoot
+    });
+
+}(window.CQ.screens.dcc, window, window.Granite.$));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2017 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc) {
+    'use strict';
+
+    dcc.resourceHelper = Object.create(null);
+
+    dcc.resourceHelper.getResource = function(path) {
+        return new Promise(function(resolve, reject) {
+            if (typeof path !== 'string') {
+                reject(new Error('Parameter "path" is mandatory.'));
+            }
+            Granite.$.ajax(Granite.HTTP.externalize(path), {
+                contentType: 'application/json',
+                success: function(node) {
+                    if (!node) {
+                        reject(new Error('Path cannot be resolved into a Resource.'));
+                    }
+                    resolve({
+                        resourceType: node['sling:resourceType'] || null,
+                        resourceSuperType: node['sling:resourceSuperType'] || null,
+                        hasResourceType: function(resourceType) {
+                            return typeof resourceType === 'string' && (
+                                resourceType === this.resourceType ||
+                                resourceType === this.resourceSuperType
+                            );
+                        }
+                    });
+                },
+                error: function(error) {
+                    reject(error);
+                }
+            });
+        });
+    };
+
+}(window.CQ.screens.dcc));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2018 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+ /* global later */
+(function(dcc, $, URITemplate) {
+    'use strict';
+
+    dcc.validation = Object.create(null);
+
+    dcc.validation.isResourceType = function(resource, resourceTypes) {
+        var url = Granite.URITemplate.expand('{+resource}/jcr:content.isResourceType.json{?resourceType*}&wcmmode=disabled', {
+            resource: resource,
+            resourceType: resourceTypes.split(',')
+        });
+
+        // Performing sync ajax call because validation has to happen synchronously
+        var response = $.ajax({
+            type: 'GET',
+            url: url,
+            async: false
+        });
+
+        var valid = false;
+        try {
+            var result = JSON.parse(response.responseText);
+            valid = result.status;
+        } catch (e) {
+            // Log the error if not triggered by a missing resource
+            if (response.status !== 404) {
+                console.error(e);
+            }
+            valid = false;
+        }
+        return valid;
+    };
+
+    dcc.validation.isValidSchedule = function(value) {
+        if (!value) {
+            return true;
+        }
+
+        // Check if anyone of the default values
+        if ((/off|false|no|never|-1/).test(value)) {
+            return true;
+        }
+
+        // Validate text expression
+        var schedule = later.parse.text(value);
+        var isValidTextExpression = schedule.error === -1;
+
+        // Validate cron expression
+        // TODO: this is a trivial regexp that needs to be improved for a better UX
+        var cronRegExp = /^([0-9,\/\-\*]+)(\s[0-9,\/\-\*]+){5}$/;
+        var isValidCronExpression = value.match(cronRegExp);
+
+        return !!(isValidTextExpression || isValidCronExpression);
+    };
+
+    dcc.validation.isValidAssignments = function(display, date) {
+        // Do not throw a validation error if the display is missing
+        if (!display) {
+            return Promise.resolve();
+        }
+
+        // Check if the assignment is for an idle channel
+        function assignmentWithIdleEvent(assignment) {
+            return assignment.events.indexOf('idle') > -1;
+        }
+
+        // Check if the assignment is for a scheduled channel
+        function assignmentWithTimerEvent(assignment) {
+            return assignment.events.indexOf('timer') > -1;
+        }
+
+        // Check if the scheduled dates are valid
+        function assignmentWithValidDates(assignment) {
+            return (assignment.startDate === null || typeof assignment.startDate === 'undefined' || assignment.startDate < date.getTime())
+                && (assignment.endDate === null || typeof assignment.endDate === 'undefined' || assignment.endDate > date.getTime());
+        }
+
+        // Validate the channel assignments
+        function validateAssignments(assignments) {
+            var errors = [];
+
+            if (!assignments.length) {
+                return errors;
+            }
+
+            // check start/end dates are ok
+            var scheduledAssignments = assignments
+                .filter(assignmentWithIdleEvent)
+                .filter(assignmentWithTimerEvent);
+            var hasValidDates = !scheduledAssignments.length
+                || scheduledAssignments.some(assignmentWithValidDates);
+            if (!hasValidDates) {
+                errors.push(new Error('no-current-dates'));
+            }
+
+            // check at least 1 channel is idle
+            var hasIdleChannel = assignments.some(assignmentWithIdleEvent);
+            if (!hasIdleChannel) {
+                errors.push(new Error('missing-idle-event'));
+            }
+
+            return errors;
+        }
+
+        // Use the display config endpoint since this has all assignments flattened
+        var configPath = display + '/_jcr_content.config.json';
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(configPath), {
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    var errors = validateAssignments(data.display.channels);
+                    errors.length ? reject(errors) : resolve();
+                },
+                error: function(error) {
+                    reject([error]);
+                }
+            });
+        });
+    };
+
+    /**
+     * Verifies if the given value is a valid CSS unit.
+     *
+     * @param  {String} value The CSS value to verify
+     * @return {Boolean} `true` if the CSS value is valid, `false` otherwise
+     */
+    dcc.validation.isValidCSSUnit = function(value) {
+        return !!(!value || value.match(/^(0|auto|[+-]?\d*(\.\d+)?(%|ch|cm|em|ex|in|mm|pc|pt|px|rem|vh|vw|vmin|vmax))$/));
+    };
+
+    /**
+     * Verifies if the placeholder name is valid.
+     *
+     * @param  {String} name The placeholder name to verify
+     * @return {Boolean} `true` if the name is valid, `false` otherwise
+     */
+    dcc.validation.isValidPlaceholderName = function(name) {
+        return !!name.match(/^[a-zA-Z0-9._]+$/);
+    };
+
+    /**
+     * Validate the variable names for the specified template.
+     *
+     * @param  {String} text      The string for the template
+     * @param  {String[]} variables The variables defined in the template context
+     * @return {String[]} the list of undefined variables, or an empty array
+     */
+    dcc.validation.validateTemplate = function(text, variables) {
+        var placeholders = text.match(/\{[a-zA-Z0-9._]+\}/g);
+        if (!placeholders) {
+            return [];
+        }
+
+        return placeholders
+            .map(function escapePlaceholder(p) {
+                return p.replace(/[{}]/g, '');
+            })
+            .filter(function filterOutMappedPlaceholders(p) {
+                return !(variables.indexOf(p) > -1);
+            });
+    };
+
+}(window.CQ.screens.dcc, Granite.$, Granite.URITemplate));
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2018 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+(function(dcc) {
+    'use strict';
+
+    // namespace
+    dcc.password = {};
+
+    /**
+     * Changes the password for a user.
+     *
+     * @param {string}  url             the user properties URL for which the password is being changed (e.g. /home/users/myuserfolder/myuser.rw.userprops.html)
+     * @param {string}  contentType     the request content type
+     * @param {string}  props           the form data: rep:password with the new password, currentPassword with the password for the current user who does the request, the charset
+     *
+     * @returns {Promise}   The resolution of the request
+     */
+    dcc.password.change = function(url, contentType, props) {
+        if (!contentType) {
+            return Promise.reject(new Error('Content type is mandatory.'));
+        }
+        if (!props) {
+            return Promise.reject(new Error('Properties are mandatory.'));
+        }
+
+        return new Promise(function(resolve, reject) {
+            Granite.$.ajax(Granite.HTTP.externalize(url), {
+                type: 'POST',
+                contentType: contentType,
+                data: props,
+                cache: false,
+                success: resolve,
+                error: function(xhr) {
+                    var error;
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        error = response.properties['status.message'];
+                    } catch (e) {
+                        error = xhr.responseText;
+                    } finally {
+                        reject(new Error(error));
+                    }
+                }
+            });
+        });
+    };
+
+}(window.CQ.screens.dcc));
+
