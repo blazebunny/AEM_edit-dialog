@@ -1,683 +1,698 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/References/coralui3.css" type="text/css">
-    <link rel="stylesheet" href="/References/core.css" type="text/css">
-    <link rel="stylesheet" href="/References/all.css" type="text/css">
-    
-    <script type="text/javascript" src="/References/coralui3.js"></script>
-    <script type="text/javascript" src="/References/all.js"></script>
-    <script type="text/javascript" src="/References/page.js"></script>
-    <script type="text/javascript" src="/References/jquery.js"></script>
-
-</head>
-
+{% load static %}
+{% block body %}
 <body>
-    <coral-dialog class="cq-Dialog coral3-Dialog coral3-Dialog--backdropNone cq-dialog-floating is-open" backdrop="none"
-        trackingfeature="aem:sites:components:dialogs:core-components:image:v2" tabindex="0" aria-hidden="false"
-        closable="off" role="dialog" open="" style="display: block; z-index: 10010;" movable="">
-        <div coral-tabcapture="top" tabindex="0"></div>
-        <div class="coral3-Dialog-wrapper" style="position: absolute; left: 50%; margin-left: -295px; width: 590px;">
-            <form class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form"
-                action="/content/aveva/us/en/temp/asdadasdas/_jcr_content/root/main_container/main-container/responsivegrid/image"
-                method="post" data-foundation-form-ajax="true"
-                data-cq-dialog-pageeditor="/editor.html/content/aveva/us/en/temp/asdadasdas.html">
+        <coral-dialog class="cq-Dialog coral3-Dialog coral3-Dialog--backdropNone cq-dialog-floating is-open"
+            backdrop="none" trackingfeature="aem:sites:components:dialogs:core-components:image:v2" tabindex="0"
+            aria-hidden="false" closable="off" role="dialog" open="" style="display: block; z-index: 10010;" movable="">
+            <div coral-tabcapture="top" tabindex="0"></div>
+            <div class="coral3-Dialog-wrapper"
+                style="position: absolute; left: 50%; margin-left: -295px; width: 590px;">
+                <form class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form"
+                    action="/content/aveva/us/en/temp/asdadasdas/_jcr_content/root/main_container/main-container/responsivegrid/image"
+                    method="post" data-foundation-form-ajax="true"
+                    data-cq-dialog-pageeditor="/editor.html/content/aveva/us/en/temp/asdadasdas.html">
 
 
-                <div class="coral3-Dialog-header u-coral-openHand">
-                    <coral-icon class="coral3-Icon coral3-Dialog-typeIcon coral3-Icon--sizeS" icon="" size="S"
-                        handle="icon"></coral-icon>
-                    <div handle="headerContent" class=" coral3-Dialog-title coral-Heading coral-Heading--2"
-                        role="heading" aria-level="2">
-                        <coral-dialog-header class="cq-dialog-header">
-                            <div class="cq-dialog-actions u-coral-pullRight">
-                                <button is="coral-button" icon="helpCircle" variant="minimal" type="button"
-                                    class="cq-dialog-header-action cq-dialog-help coral3-Button coral3-Button--minimal"
-                                    data-href="https://www.adobe.com/go/aem_cmp_image_v2" title="Help" size="M">
-                                    <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--helpCircle"
-                                        icon="helpCircle" size="S" role="img" aria-label="help circle"></coral-icon>
-                                    <coral-button-label></coral-button-label>
-                                </button><button is="coral-button" icon="fullScreen" variant="minimal"
-                                    class="cq-dialog-header-action cq-dialog-layouttoggle coral3-Button coral3-Button--minimal"
-                                    type="button" title="Toggle Fullscreen" size="M">
-                                    <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--fullScreen"
-                                        icon="fullScreen" size="S" role="img" aria-label="full screen"></coral-icon>
-                                    <coral-button-label></coral-button-label>
-                                </button>
-                                <button is="coral-button" type="button" icon="close" variant="minimal"
-                                    class="cq-dialog-header-action cq-dialog-cancel coral3-Button coral3-Button--minimal"
-                                    title="Cancel" size="M">
-                                    <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--close" icon="close"
-                                        size="S" role="img" aria-label="close"></coral-icon>
-                                    <coral-button-label></coral-button-label>
-                                </button>
-                                <button is="coral-button" icon="check" variant="minimal"
-                                    class="cq-dialog-header-action cq-dialog-submit coral3-Button coral3-Button--minimal"
-                                    title="Done" size="M">
-                                    <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--check" icon="check"
-                                        size="S" role="img" aria-label="check"></coral-icon>
-                                    <coral-button-label></coral-button-label>
-                                </button>
-                            </div>
-                            Image
-                        </coral-dialog-header>
+                    <div class="coral3-Dialog-header u-coral-openHand">
+                        <coral-icon class="coral3-Icon coral3-Dialog-typeIcon coral3-Icon--sizeS" icon="" size="S"
+                            handle="icon"></coral-icon>
+                        <div handle="headerContent" class=" coral3-Dialog-title coral-Heading coral-Heading--2"
+                            role="heading" aria-level="2">
+                            {% comment %} Heading {% endcomment %}
+                            <coral-dialog-header class="cq-dialog-header">
+                                <div class="cq-dialog-actions u-coral-pullRight">
+                                    <button is="coral-button" icon="helpCircle" variant="minimal" type="button"
+                                        class="cq-dialog-header-action cq-dialog-help coral3-Button coral3-Button--minimal"
+                                        data-href="https://www.adobe.com/go/aem_cmp_image_v2" title="Help" size="M">
+                                        <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--helpCircle"
+                                            icon="helpCircle" size="S" role="img" aria-label="help circle"></coral-icon>
+                                        <coral-button-label></coral-button-label>
+                                    </button><button is="coral-button" icon="fullScreen" variant="minimal"
+                                        class="cq-dialog-header-action cq-dialog-layouttoggle coral3-Button coral3-Button--minimal"
+                                        type="button" title="Toggle Fullscreen" size="M">
+                                        <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--fullScreen"
+                                            icon="fullScreen" size="S" role="img" aria-label="full screen"></coral-icon>
+                                        <coral-button-label></coral-button-label>
+                                    </button>
+                                    <button is="coral-button" type="button" icon="close" variant="minimal"
+                                        class="cq-dialog-header-action cq-dialog-cancel coral3-Button coral3-Button--minimal"
+                                        title="Cancel" size="M">
+                                        <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--close"
+                                            icon="close" size="S" role="img" aria-label="close"></coral-icon>
+                                        <coral-button-label></coral-button-label>
+                                    </button>
+                                    <button is="coral-button" icon="check" variant="minimal"
+                                        class="cq-dialog-header-action cq-dialog-submit coral3-Button coral3-Button--minimal"
+                                        title="Done" size="M">
+                                        <coral-icon class="coral3-Icon coral3-Icon--sizeS coral3-Icon--check"
+                                            icon="check" size="S" role="img" aria-label="check"></coral-icon>
+                                        <coral-button-label></coral-button-label>
+                                    </button>
+                                </div>
+                                Image
+                            </coral-dialog-header>
+                        </div>
+                        <button is="coral-button" class="coral3-Button coral3-Dialog-closeButton coral3-Button--minimal"
+                            size="M" variant="minimal" tracking="off" handle="closeButton" type="button" icon="close"
+                            iconsize="XS" title="Close" tabindex="-1" coral-close="" style="display: none;">
+                            <coral-icon class="coral3-Icon coral3-Icon--close coral3-Icon--sizeXS" icon="close"
+                                size="XS" role="img" aria-label="close"></coral-icon>
+                            <coral-button-label></coral-button-label>
+                        </button>
                     </div>
-                    <button is="coral-button" class="coral3-Button coral3-Dialog-closeButton coral3-Button--minimal"
-                        size="M" variant="minimal" tracking="off" handle="closeButton" type="button" icon="close"
-                        iconsize="XS" title="Close" tabindex="-1" coral-close="" style="display: none;">
-                        <coral-icon class="coral3-Icon coral3-Icon--close coral3-Icon--sizeXS" icon="close" size="XS"
-                            role="img" aria-label="close"></coral-icon>
-                        <coral-button-label></coral-button-label>
-                    </button>
-                </div>
-                <coral-dialog-content class="coral3-Dialog-content">
-                    <input type="hidden" name="_charset_" value="utf-8">
+                    <coral-dialog-content class="coral3-Dialog-content">
+                        <input type="hidden" name="_charset_" value="utf-8">
 
-                    <input type="hidden" name="./sling:resourceType" value="aveva/components/content/image">
+                        <input type="hidden" name="./sling:resourceType" value="aveva/components/content/image">
 
-                    <input type="hidden" name="./jcr:lastModified">
-                    <input type="hidden" name="./jcr:lastModifiedBy">
-                    <div class="cq-dialog-content cmp-image__editor">
-                        <coral-tabview maximized="" class="coral3-TabView" __vent-id__="891">
+                        <input type="hidden" name="./jcr:lastModified">
+                        <input type="hidden" name="./jcr:lastModifiedBy">
+                        <div class="cq-dialog-content cmp-image__editor">
+                            <coral-tabview maximized="" class="coral3-TabView" __vent-id__="891">
 
 
-                            <coral-tablist target="#coral-id-502" tracking="off" class="coral3-TabList"
-                                orientation="horizontal" __vent-id__="892" role="tablist" id="coral-id-503"
-                                aria-multiselectable="false">
-                                <coral-tab
-                                    data-foundation-tracking-event="{&quot;feature&quot;:null,&quot;element&quot;:&quot;asset&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;widget&quot;:{&quot;name&quot;:&quot;tabs&quot;,&quot;type&quot;:&quot;tab list&quot;}}"
-                                    selected="" class="coral3-Tab is-selected" role="tab" id="coral-id-504"
-                                    aria-invalid="false" aria-disabled="false" aria-selected="true" tabindex="0"
-                                    aria-controls="coral-id-526">
-                                    <coral-tab-label>Asset</coral-tab-label>
-                                </coral-tab>
-                                <coral-tab
-                                    data-foundation-tracking-event="{&quot;feature&quot;:null,&quot;element&quot;:&quot;metadata&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;widget&quot;:{&quot;name&quot;:&quot;tabs&quot;,&quot;type&quot;:&quot;tab list&quot;}}"
-                                    class="coral3-Tab" role="tab" id="coral-id-505" aria-invalid="false"
-                                    aria-disabled="false" aria-selected="false" tabindex="-1"
-                                    aria-controls="coral-id-527">
-                                    <coral-tab-label>Metadata</coral-tab-label>
-                                </coral-tab>
-                            </coral-tablist>
-                            <coral-panelstack maximized="" id="coral-id-502" class="coral3-PanelStack"
-                                role="presentation">
-                                <coral-panel class="coral3-Panel is-selected" role="tabpanel" aria-hidden="false"
-                                    id="coral-id-526" aria-labelledby="coral-id-504" selected="">
-                                    <coral-panel-content>
-                                        <div class="foundation-layout-util-vmargin">
-                                            <div class="coral-FixedColumn foundation-layout-util-vmargin">
-                                                <div class="coral-FixedColumn-column">
-                                                    <coral-fileupload
-                                                        class="coral-Form-field cq-FileUpload cq-droptarget coral3-FileUpload"
-                                                        name="./file" async="" data-foundation-validation=""
-                                                        accept="image/gif,image/jpeg,image/png,image/tiff,image/svg+xml"
-                                                        action="/content/aveva/us/en/temp/asdadasdas/_jcr_content/root/main_container/main-container/responsivegrid/image"
-                                                        data-cq-fileupload-temporaryfilename="./file.sftmp"
-                                                        data-cq-fileupload-temporaryfiledelete="./file.sftmp@Delete"
-                                                        data-cq-fileupload-temporaryfilepath="/content/aveva/us/en/temp/asdadasdas/jcr:content/root/main_container/main-container/responsivegrid/image/file.sftmp"
-                                                        aria-disabled="false" aria-invalid="false"
-                                                        aria-readonly="false">
-                                                        <div class="cq-FileUpload-thumbnail">
-                                                            <div class="cq-FileUpload-thumbnail-img"
-                                                                data-cq-fileupload-thumbnail-img=""></div><button
-                                                                class="cq-FileUpload-edit coral3-Button coral3-Button--quiet"
-                                                                data-cq-fileupload-viewinadminuri="/assetdetails.html{+item}"
-                                                                type="button" disabled="" autocomplete="off"
-                                                                is="coral-button" variant="quiet" trackingfeature=""
-                                                                trackingelement="edit" tracking="ON" size="M">
-                                                                <coral-button-label>Edit</coral-button-label>
-                                                            </button><button type="button"
-                                                                class="cq-FileUpload-clear coral3-Button coral3-Button--quiet"
-                                                                is="coral-button" variant="quiet"
-                                                                coral-fileupload-clear="" size="M">
-                                                                <coral-button-label>Clear</coral-button-label>
-                                                            </button>
-                                                            <div class="cq-FileUpload-thumbnail-dropHere">
-                                                                <coral-icon icon="image"
-                                                                    class="cq-FileUpload-icon coral3-Icon coral3-Icon--image coral3-Icon--sizeS"
-                                                                    size="S" role="img" aria-label="image"></coral-icon>
-                                                                <span class="cq-FileUpload-label">Drop an asset
-                                                                    here.</span>
-                                                            </div>
-                                                        </div>
-                                                        <input type="hidden" name="./fileName"
-                                                            data-cq-fileupload-parameter="filename" disabled="disabled">
-                                                        <input type="hidden" name="./fileReference"
-                                                            data-cq-fileupload-parameter="filereference"
-                                                            disabled="disabled"><input type="hidden"
-                                                            name="./file@Delete"
-                                                            data-cq-fileupload-parameter="filedelete"
-                                                            disabled="disabled">
-                                                        <input type="hidden" name="./file@MoveFrom"
-                                                            data-cq-fileupload-parameter="filemovefrom"
-                                                            value="/content/aveva/us/en/temp/asdadasdas/jcr:content/root/main_container/main-container/responsivegrid/image/file.sftmp"
-                                                            disabled="disabled">
-
-
-                                                        <input handle="input"
-                                                            class=" coral3-FileUpload-input is-unselectable"
-                                                            tabindex="-1" name="./file" type="file"
+                                <coral-tablist target="#coral-id-502" tracking="off" class="coral3-TabList"
+                                    orientation="horizontal" __vent-id__="892" role="tablist" id="coral-id-503"
+                                    aria-multiselectable="false">
+                                    <coral-tab
+                                        data-foundation-tracking-event="{&quot;feature&quot;:null,&quot;element&quot;:&quot;asset&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;widget&quot;:{&quot;name&quot;:&quot;tabs&quot;,&quot;type&quot;:&quot;tab list&quot;}}"
+                                        selected="" class="coral3-Tab is-selected" role="tab" id="coral-id-504"
+                                        aria-invalid="false" aria-disabled="false" aria-selected="true" tabindex="0"
+                                        aria-controls="coral-id-526">
+                                        <coral-tab-label>Asset</coral-tab-label>
+                                    </coral-tab>
+                                    <coral-tab
+                                        data-foundation-tracking-event="{&quot;feature&quot;:null,&quot;element&quot;:&quot;metadata&quot;,&quot;type&quot;:&quot;tab&quot;,&quot;widget&quot;:{&quot;name&quot;:&quot;tabs&quot;,&quot;type&quot;:&quot;tab list&quot;}}"
+                                        class="coral3-Tab" role="tab" id="coral-id-505" aria-invalid="false"
+                                        aria-disabled="false" aria-selected="false" tabindex="-1"
+                                        aria-controls="coral-id-527">
+                                        <coral-tab-label>Metadata</coral-tab-label>
+                                    </coral-tab>
+                                </coral-tablist>
+                                <coral-panelstack maximized="" id="coral-id-502" class="coral3-PanelStack"
+                                    role="presentation">
+                                    <coral-panel class="coral3-Panel is-selected" role="tabpanel" aria-hidden="false"
+                                        id="coral-id-526" aria-labelledby="coral-id-504" selected="">
+                                        <coral-panel-content>
+                                            <div class="foundation-layout-util-vmargin">
+                                                <div class="coral-FixedColumn foundation-layout-util-vmargin">
+                                                    <div class="coral-FixedColumn-column">
+                                                        <coral-fileupload
+                                                            class="coral-Form-field cq-FileUpload cq-droptarget coral3-FileUpload"
+                                                            name="./file" async="" data-foundation-validation=""
                                                             accept="image/gif,image/jpeg,image/png,image/tiff,image/svg+xml"
-                                                            aria-invalid="false" aria-labelledby=""
-                                                            style="width: 0px; height: 0px;"><object aria-hidden="true"
-                                                            tabindex="-1"
-                                                            style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
-                                                            type="text/html" data="about:blank">​</object><input
-                                                            type="hidden" name="./imageMap@Delete"
-                                                            class="cq-ImageEditor-param" value="" disabled=""><input
-                                                            type="hidden" name="./imageCrop@Delete"
-                                                            class="cq-ImageEditor-param" value="" disabled=""><input
-                                                            type="hidden" name="./imageRotate@Delete"
-                                                            class="cq-ImageEditor-param" value="" disabled="">
-                                                    </coral-fileupload>
-                                                    <div class="coral-Form-fieldwrapper"><label
-                                                            id="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
-                                                            class="coral-Form-fieldlabel">Width (%)</label>
-                                                        <coral-numberinput
-                                                            class="coral-Form-field coral3-NumberInput coral-InputGroup"
-                                                            name="./width" value="" min="40" max="100" step="1"
-                                                            labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
-                                                            data-foundation-validation="" data-validation=""
-                                                            role="group" aria-disabled="false" aria-invalid="false"
-                                                            aria-readonly="false" aria-required="false"
-                                                            aria-labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3">
-                                                            <span class=" coral-InputGroup-button" role="presentation">
-                                                                <button is="coral-button"
-                                                                    class="coral3-Button coral3-Button--secondary coral3-NumberInput-stepUp"
-                                                                    size="M" variant="secondary" type="button"
-                                                                    handle="stepUp" title="Increment"
-                                                                    aria-label="Increment" icon="chevronUp"
-                                                                    iconsize="XS" tabindex="-1"
-                                                                    aria-controls="coral-id-506">
-                                                                    <coral-icon
-                                                                        class="coral3-Icon coral3-Icon--chevronUp coral3-Icon--sizeXS"
-                                                                        icon="chevronUp" size="XS" role="img"
-                                                                        aria-label="chevron up"></coral-icon>
-                                                                    <coral-button-label></coral-button-label>
-                                                                </button>
-                                                                <button is="coral-button"
-                                                                    class="coral3-Button coral3-Button--secondary coral3-NumberInput-stepDown"
-                                                                    size="M" variant="secondary" type="button"
-                                                                    handle="stepDown" title="Decrement"
-                                                                    aria-label="Decrement" icon="chevronDown"
-                                                                    iconsize="XS" tabindex="-1"
-                                                                    aria-controls="coral-id-506" disabled="">
-                                                                    <coral-icon
-                                                                        class="coral3-Icon coral3-Icon--chevronDown coral3-Icon--sizeXS"
-                                                                        icon="chevronDown" size="XS" role="img"
-                                                                        aria-label="chevron down"></coral-icon>
-                                                                    <coral-button-label></coral-button-label>
-                                                                </button>
-                                                                <span role="presentation" handle="liveregion"
-                                                                    aria-live="assertive" aria-atomic="true"
-                                                                    aria-relevant="additions text"
-                                                                    class=" u-coral-screenReaderOnly"
-                                                                    aria-hidden="true"></span>
-                                                            </span>
-                                                            <input is="coral-textfield"
-                                                                class="coral3-Textfield coral3-NumberInput-input coral-InputGroup-input"
-                                                                handle="input" type="number" id="coral-id-506"
-                                                                name="./width"
-                                                                aria-labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
-                                                                aria-valuenow="" aria-valuetext="" aria-invalid="false"
-                                                                aria-valuemin="40" min="40" aria-valuemax="100"
-                                                                max="100" step="1"></coral-numberinput>
-                                                    </div>
-                                                    <div class="coral-Form-fieldwrapper"><label
-                                                            id="label_96f693b2-a141-4c33-9c31-86caf67377e6"
-                                                            class="coral-Form-fieldlabel">Image Alignment</label>
-                                                        <coral-select class="coral-Form-field coral3-Select"
-                                                            name="./imageAlignment"
-                                                            labelledby="label_96f693b2-a141-4c33-9c31-86caf67377e6"
-                                                            data-foundation-validation="" data-validation=""
-                                                            placeholder="" __vent-id__="907" aria-required="false"
-                                                            aria-invalid="false" aria-disabled="false"
+                                                            action="/content/aveva/us/en/temp/asdadasdas/_jcr_content/root/main_container/main-container/responsivegrid/image"
+                                                            data-cq-fileupload-temporaryfilename="./file.sftmp"
+                                                            data-cq-fileupload-temporaryfiledelete="./file.sftmp@Delete"
+                                                            data-cq-fileupload-temporaryfilepath="/content/aveva/us/en/temp/asdadasdas/jcr:content/root/main_container/main-container/responsivegrid/image/file.sftmp"
+                                                            aria-disabled="false" aria-invalid="false"
                                                             aria-readonly="false">
-                                                            <button is="coral-button"
-                                                                class="coral3-Button coral3-Button--secondary coral3-Button--block coral3-Select-button"
-                                                                size="M" variant="secondary" tracking="off"
-                                                                handle="button" type="button" block=""
-                                                                aria-haspopup="true" id="coral-id-507"
-                                                                aria-controls="coral-id-508" aria-owns="coral-id-508"
-                                                                aria-expanded="false"
-                                                                aria-labelledby="label_96f693b2-a141-4c33-9c31-86caf67377e6">
-                                                                <coral-button-label></coral-button-label>
-                                                                <coral-icon
-                                                                    class="coral3-Icon coral3-Select-openIcon coral3-Icon--chevronDown coral3-Icon--sizeXS"
-                                                                    icon="chevronDown" size="XS" handle="icon"
-                                                                    role="img" aria-label="chevron down"></coral-icon>
-                                                                <span handle="label"
-                                                                    class=" coral3-Select-label">Left</span>
-                                                            </button>
-                                                            <coral-overlay class="coral3-Overlay coral3-Select-overlay"
-                                                                aria-hidden="true" tracking="off" handle="overlay"
-                                                                trapfocus="on" tabindex="0" focusonshow="on"
-                                                                role="presentation" offset="-1" alignmy="left top"
-                                                                alignat="left bottom" style="display: none;">
-                                                                <div coral-tabcapture="top" tabindex="0"></div>
-                                                                <div coral-tabcapture="intermediate" tabindex="0"></div>
-                                                                <div coral-tabcapture="bottom" tabindex="0"></div>
-                                                                <coral-selectlist
-                                                                    class="coral3-SelectList coral3-Select-selectList"
-                                                                    role="listbox" id="coral-id-508" tracking="off"
-                                                                    handle="list" aria-multiselectable="false"
-                                                                    style="max-height: 252px;">
-                                                                    <coral-selectlist-item
-                                                                        class="coral3-SelectList-item is-selected"
-                                                                        role="option" value="container-left" selected=""
-                                                                        tabindex="0" aria-disabled="false"
-                                                                        aria-selected="true">Left
-                                                                    </coral-selectlist-item>
-                                                                    <coral-selectlist-item
-                                                                        class="coral3-SelectList-item" role="option"
-                                                                        value="container-center" tabindex="-1"
-                                                                        aria-selected="false" aria-disabled="false">
-                                                                        Center
-                                                                    </coral-selectlist-item>
-                                                                    <coral-selectlist-item
-                                                                        class="coral3-SelectList-item" role="option"
-                                                                        value="container-right" tabindex="-1"
-                                                                        aria-selected="false" aria-disabled="false">
-                                                                        Right
-                                                                    </coral-selectlist-item>
-                                                                </coral-selectlist>
-                                                            </coral-overlay>
-                                                            <input handle="input" type="hidden" name="./imageAlignment"
-                                                                value="container-left">
+                                                            <div class="cq-FileUpload-thumbnail">
+                                                                <div class="cq-FileUpload-thumbnail-img"
+                                                                    data-cq-fileupload-thumbnail-img=""></div><button
+                                                                    class="cq-FileUpload-edit coral3-Button coral3-Button--quiet"
+                                                                    data-cq-fileupload-viewinadminuri="/assetdetails.html{+item}"
+                                                                    type="button" disabled="" autocomplete="off"
+                                                                    is="coral-button" variant="quiet" trackingfeature=""
+                                                                    trackingelement="edit" tracking="ON" size="M">
+                                                                    <coral-button-label>Edit</coral-button-label>
+                                                                </button><button type="button"
+                                                                    class="cq-FileUpload-clear coral3-Button coral3-Button--quiet"
+                                                                    is="coral-button" variant="quiet"
+                                                                    coral-fileupload-clear="" size="M">
+                                                                    <coral-button-label>Clear</coral-button-label>
+                                                                </button>
+                                                                <div class="cq-FileUpload-thumbnail-dropHere">
+                                                                    <coral-icon icon="image"
+                                                                        class="cq-FileUpload-icon coral3-Icon coral3-Icon--image coral3-Icon--sizeS"
+                                                                        size="S" role="img" aria-label="image">
+                                                                    </coral-icon>
+                                                                    <span class="cq-FileUpload-label">Drop an asset
+                                                                        here.</span>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" name="./fileName"
+                                                                data-cq-fileupload-parameter="filename"
+                                                                disabled="disabled">
+                                                            <input type="hidden" name="./fileReference"
+                                                                data-cq-fileupload-parameter="filereference"
+                                                                disabled="disabled"><input type="hidden"
+                                                                name="./file@Delete"
+                                                                data-cq-fileupload-parameter="filedelete"
+                                                                disabled="disabled">
+                                                            <input type="hidden" name="./file@MoveFrom"
+                                                                data-cq-fileupload-parameter="filemovefrom"
+                                                                value="/content/aveva/us/en/temp/asdadasdas/jcr:content/root/main_container/main-container/responsivegrid/image/file.sftmp"
+                                                                disabled="disabled">
 
 
-                                                            <coral-select-item value="container-left" selected=""
-                                                                trackingelement="">Left</coral-select-item>
-                                                            <coral-select-item value="container-center"
-                                                                trackingelement="">
-                                                                Center</coral-select-item>
-                                                            <coral-select-item value="container-right"
-                                                                trackingelement="">
-                                                                Right</coral-select-item>
-                                                            <input class="foundation-field-related" type="hidden"
-                                                                name="./imageAlignment@Delete">
-                                                        </coral-select>
+                                                            <input handle="input"
+                                                                class=" coral3-FileUpload-input is-unselectable"
+                                                                tabindex="-1" name="./file" type="file"
+                                                                accept="image/gif,image/jpeg,image/png,image/tiff,image/svg+xml"
+                                                                aria-invalid="false" aria-labelledby=""
+                                                                style="width: 0px; height: 0px;"><object
+                                                                aria-hidden="true" tabindex="-1"
+                                                                style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
+                                                                type="text/html" data="about:blank">​</object><input
+                                                                type="hidden" name="./imageMap@Delete"
+                                                                class="cq-ImageEditor-param" value="" disabled=""><input
+                                                                type="hidden" name="./imageCrop@Delete"
+                                                                class="cq-ImageEditor-param" value="" disabled=""><input
+                                                                type="hidden" name="./imageRotate@Delete"
+                                                                class="cq-ImageEditor-param" value="" disabled="">
+                                                        </coral-fileupload>
+                                                        <div class="coral-Form-fieldwrapper"><label
+                                                                id="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
+                                                                class="coral-Form-fieldlabel">Width (%)</label>
+                                                            <coral-numberinput
+                                                                class="coral-Form-field coral3-NumberInput coral-InputGroup"
+                                                                name="./width" value="" min="40" max="100" step="1"
+                                                                labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
+                                                                data-foundation-validation="" data-validation=""
+                                                                role="group" aria-disabled="false" aria-invalid="false"
+                                                                aria-readonly="false" aria-required="false"
+                                                                aria-labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3">
+                                                                <span class=" coral-InputGroup-button"
+                                                                    role="presentation">
+                                                                    <button is="coral-button"
+                                                                        class="coral3-Button coral3-Button--secondary coral3-NumberInput-stepUp"
+                                                                        size="M" variant="secondary" type="button"
+                                                                        handle="stepUp" title="Increment"
+                                                                        aria-label="Increment" icon="chevronUp"
+                                                                        iconsize="XS" tabindex="-1"
+                                                                        aria-controls="coral-id-506">
+                                                                        <coral-icon
+                                                                            class="coral3-Icon coral3-Icon--chevronUp coral3-Icon--sizeXS"
+                                                                            icon="chevronUp" size="XS" role="img"
+                                                                            aria-label="chevron up"></coral-icon>
+                                                                        <coral-button-label></coral-button-label>
+                                                                    </button>
+                                                                    <button is="coral-button"
+                                                                        class="coral3-Button coral3-Button--secondary coral3-NumberInput-stepDown"
+                                                                        size="M" variant="secondary" type="button"
+                                                                        handle="stepDown" title="Decrement"
+                                                                        aria-label="Decrement" icon="chevronDown"
+                                                                        iconsize="XS" tabindex="-1"
+                                                                        aria-controls="coral-id-506" disabled="">
+                                                                        <coral-icon
+                                                                            class="coral3-Icon coral3-Icon--chevronDown coral3-Icon--sizeXS"
+                                                                            icon="chevronDown" size="XS" role="img"
+                                                                            aria-label="chevron down"></coral-icon>
+                                                                        <coral-button-label></coral-button-label>
+                                                                    </button>
+                                                                    <span role="presentation" handle="liveregion"
+                                                                        aria-live="assertive" aria-atomic="true"
+                                                                        aria-relevant="additions text"
+                                                                        class=" u-coral-screenReaderOnly"
+                                                                        aria-hidden="true"></span>
+                                                                </span>
+                                                                <input is="coral-textfield"
+                                                                    class="coral3-Textfield coral3-NumberInput-input coral-InputGroup-input"
+                                                                    handle="input" type="number" id="coral-id-506"
+                                                                    name="./width"
+                                                                    aria-labelledby="label_ca9dbef5-8ff9-4380-a680-5b7b203781f3"
+                                                                    aria-valuenow="" aria-valuetext=""
+                                                                    aria-invalid="false" aria-valuemin="40" min="40"
+                                                                    aria-valuemax="100" max="100" step="1">
+                                                            </coral-numberinput>
+                                                        </div>
+                                                        <div class="coral-Form-fieldwrapper"><label
+                                                                id="label_96f693b2-a141-4c33-9c31-86caf67377e6"
+                                                                class="coral-Form-fieldlabel">Image Alignment</label>
+                                                            <coral-select class="coral-Form-field coral3-Select"
+                                                                name="./imageAlignment"
+                                                                labelledby="label_96f693b2-a141-4c33-9c31-86caf67377e6"
+                                                                data-foundation-validation="" data-validation=""
+                                                                placeholder="" __vent-id__="907" aria-required="false"
+                                                                aria-invalid="false" aria-disabled="false"
+                                                                aria-readonly="false">
+                                                                <button is="coral-button"
+                                                                    class="coral3-Button coral3-Button--secondary coral3-Button--block coral3-Select-button"
+                                                                    size="M" variant="secondary" tracking="off"
+                                                                    handle="button" type="button" block=""
+                                                                    aria-haspopup="true" id="coral-id-507"
+                                                                    aria-controls="coral-id-508"
+                                                                    aria-owns="coral-id-508" aria-expanded="false"
+                                                                    aria-labelledby="label_96f693b2-a141-4c33-9c31-86caf67377e6">
+                                                                    <coral-button-label></coral-button-label>
+                                                                    <coral-icon
+                                                                        class="coral3-Icon coral3-Select-openIcon coral3-Icon--chevronDown coral3-Icon--sizeXS"
+                                                                        icon="chevronDown" size="XS" handle="icon"
+                                                                        role="img" aria-label="chevron down">
+                                                                    </coral-icon>
+                                                                    <span handle="label"
+                                                                        class=" coral3-Select-label">Left</span>
+                                                                </button>
+                                                                <coral-overlay
+                                                                    class="coral3-Overlay coral3-Select-overlay"
+                                                                    aria-hidden="true" tracking="off" handle="overlay"
+                                                                    trapfocus="on" tabindex="0" focusonshow="on"
+                                                                    role="presentation" offset="-1" alignmy="left top"
+                                                                    alignat="left bottom" style="display: none;">
+                                                                    <div coral-tabcapture="top" tabindex="0"></div>
+                                                                    <div coral-tabcapture="intermediate" tabindex="0">
+                                                                    </div>
+                                                                    <div coral-tabcapture="bottom" tabindex="0"></div>
+                                                                    <coral-selectlist
+                                                                        class="coral3-SelectList coral3-Select-selectList"
+                                                                        role="listbox" id="coral-id-508" tracking="off"
+                                                                        handle="list" aria-multiselectable="false"
+                                                                        style="max-height: 252px;">
+                                                                        <coral-selectlist-item
+                                                                            class="coral3-SelectList-item is-selected"
+                                                                            role="option" value="container-left"
+                                                                            selected="" tabindex="0"
+                                                                            aria-disabled="false" aria-selected="true">
+                                                                            Left
+                                                                        </coral-selectlist-item>
+                                                                        <coral-selectlist-item
+                                                                            class="coral3-SelectList-item" role="option"
+                                                                            value="container-center" tabindex="-1"
+                                                                            aria-selected="false" aria-disabled="false">
+                                                                            Center
+                                                                        </coral-selectlist-item>
+                                                                        <coral-selectlist-item
+                                                                            class="coral3-SelectList-item" role="option"
+                                                                            value="container-right" tabindex="-1"
+                                                                            aria-selected="false" aria-disabled="false">
+                                                                            Right
+                                                                        </coral-selectlist-item>
+                                                                    </coral-selectlist>
+                                                                </coral-overlay>
+                                                                <input handle="input" type="hidden"
+                                                                    name="./imageAlignment" value="container-left">
+
+
+                                                                <coral-select-item value="container-left" selected=""
+                                                                    trackingelement="">Left</coral-select-item>
+                                                                <coral-select-item value="container-center"
+                                                                    trackingelement="">
+                                                                    Center</coral-select-item>
+                                                                <coral-select-item value="container-right"
+                                                                    trackingelement="">
+                                                                    Right</coral-select-item>
+                                                                <input class="foundation-field-related" type="hidden"
+                                                                    name="./imageAlignment@Delete">
+                                                            </coral-select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </coral-panel-content>
-                                </coral-panel>
-                                <coral-panel class="coral3-Panel" role="tabpanel" aria-hidden="true" id="coral-id-527"
-                                    aria-labelledby="coral-id-505">
-                                    <coral-panel-content>
-                                        <div class="foundation-layout-util-vmargin">
-                                            <div class="coral-FixedColumn foundation-layout-util-vmargin">
-                                                <div class="coral-FixedColumn-column">
-                                                    <div
-                                                        class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
-                                                        <coral-checkbox name="./isDecorative" value="true"
-                                                            labelledby="description_e4422bce-35b6-4320-b92f-e9812912dc8b"
-                                                            data-foundation-validation="" data-validation=""
-                                                            class="coral-Form-field coral3-Checkbox"
-                                                            aria-disabled="false" aria-required="false"
-                                                            aria-invalid="false" aria-readonly="false"><input
-                                                                type="checkbox" handle="input"
-                                                                class=" coral3-Checkbox-input" id="coral-id-510"
-                                                                value="true" name="./isDecorative"
-                                                                aria-labelledby="description_e4422bce-35b6-4320-b92f-e9812912dc8b">
-                                                            <span class=" coral3-Checkbox-checkmark"
-                                                                handle="checkbox"></span>
-                                                            <label class=" coral3-Checkbox-description"
-                                                                handle="labelWrapper" for="coral-id-510">
-                                                                <coral-checkbox-label>Image is decorative
-
-                                                                </coral-checkbox-label>
-                                                            </label></coral-checkbox><input
-                                                            class="foundation-field-related" type="hidden"
-                                                            name="./isDecorative@Delete"><input
-                                                            class="foundation-field-related" type="hidden" value="false"
-                                                            name="./isDecorative@DefaultValue"><input
-                                                            class="foundation-field-related" type="hidden" value="true"
-                                                            name="./isDecorative@UseDefaultWhenMissing">
-                                                        <coral-icon
-                                                            class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                            icon="infoCircle" tabindex="0" alt="Title Description"
-                                                            size="S" role="img" aria-label="Title Description">
-                                                        </coral-icon>
-                                                        <coral-tooltip target="_prev" placement="right"
-                                                            id="description_e4422bce-35b6-4320-b92f-e9812912dc8b"
-                                                            class="coral3-Tooltip coral3-Tooltip--info"
-                                                            aria-hidden="true" variant="info" tabindex="-1"
-                                                            role="tooltip" style="display: none;">
-
-                                                            <coral-tooltip-content>Check if the image should be ignored
-                                                                by
-                                                                assistive technology and therefore does not require an
-                                                                alternative text. This applies to decorative images
-                                                                only.
-                                                            </coral-tooltip-content>
-                                                        </coral-tooltip>
-                                                    </div>
-                                                    <div class="cmp-image__editor-alt coral-Well">
-                                                        <div class="coral-Form-fieldwrapper"><label
-                                                                id="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
-                                                                class="coral-Form-fieldlabel">Alternative Text
-                                                                *</label><input
-                                                                class="coral-Form-field coral3-Textfield" type="text"
-                                                                name="./alt"
-                                                                labelledby="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79 description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
-                                                                value="" aria-required="true"
-                                                                data-foundation-validation="" data-validation=""
-                                                                is="coral-textfield" id="coral-id-512"
-                                                                aria-labelledby="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79 description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
-                                                                aria-invalid="false" data-previous-value="">
-                                                            <coral-icon
-                                                                class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                                icon="infoCircle" tabindex="0" alt="Title Description"
-                                                                size="S" role="img" aria-label="Title Description">
-                                                            </coral-icon>
-                                                            <coral-tooltip target="_prev" placement="left"
-                                                                id="description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
-                                                                class="coral3-Tooltip coral3-Tooltip--info"
-                                                                aria-hidden="true" variant="info" tabindex="-1"
-                                                                role="tooltip" style="display: none;">
-
-                                                                <coral-tooltip-content>Textual alternative of the
-                                                                    meaning or
-                                                                    function of the image, for visually impaired
-                                                                    readers.
-                                                                </coral-tooltip-content>
-                                                            </coral-tooltip>
-                                                        </div>
-                                                        <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"
-                                                            style="display: none;">
-                                                            <coral-checkbox name="./altValueFromDAM" value="true"
-                                                                checked=""
-                                                                labelledby="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
-                                                                data-foundation-validation="" data-validation=""
-                                                                class="coral-Form-field coral3-Checkbox is-disabled"
-                                                                aria-disabled="true" aria-required="false"
-                                                                aria-invalid="false" aria-readonly="false"
-                                                                data-previous-value="true" disabled=""><input
-                                                                    type="checkbox" handle="input"
-                                                                    class=" coral3-Checkbox-input" id="coral-id-514"
-                                                                    value="true" name="./altValueFromDAM"
-                                                                    aria-labelledby="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
-                                                                    disabled="">
-                                                                <span class=" coral3-Checkbox-checkmark"
-                                                                    handle="checkbox"></span>
-                                                                <label class=" coral3-Checkbox-description"
-                                                                    handle="labelWrapper" for="coral-id-514">
-                                                                    <coral-checkbox-label>Get alternative text from DAM
-
-                                                                    </coral-checkbox-label>
-                                                                </label></coral-checkbox><input
-                                                                class="foundation-field-related" type="hidden"
-                                                                name="./altValueFromDAM@Delete" disabled=""><input
-                                                                class="foundation-field-related" type="hidden"
-                                                                value="false" name="./altValueFromDAM@DefaultValue"
-                                                                disabled=""><input class="foundation-field-related"
-                                                                type="hidden" value="true"
-                                                                name="./altValueFromDAM@UseDefaultWhenMissing"
-                                                                disabled="">
-                                                            <coral-icon
-                                                                class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                                icon="infoCircle" tabindex="0" alt="Title Description"
-                                                                size="S" role="img" aria-label="Title Description">
-                                                            </coral-icon>
-                                                            <coral-tooltip target="_prev" placement="right"
-                                                                id="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
-                                                                class="coral3-Tooltip coral3-Tooltip--info"
-                                                                aria-hidden="true" variant="info" tabindex="-1"
-                                                                role="tooltip" style="display: none;">
-
-                                                                <coral-tooltip-content>When checked, populate the
-                                                                    image's
-                                                                    alt attribute with the value of the dc:description
-                                                                    metadata in DAM.</coral-tooltip-content>
-                                                            </coral-tooltip>
-                                                        </div>
-                                                    </div>
-                                                    <div class="coral-Well">
-                                                        <div class="coral-Form-fieldwrapper"><label
-                                                                id="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
-                                                                class="coral-Form-fieldlabel">Caption</label><input
-                                                                class="coral-Form-field coral3-Textfield" type="text"
-                                                                name="./jcr:title"
-                                                                labelledby="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
-                                                                value="" data-foundation-validation=""
-                                                                data-validation="" is="coral-textfield"
-                                                                id="coral-id-516"
-                                                                aria-labelledby="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
-                                                                aria-invalid="false" data-previous-value="">
-                                                            <coral-icon
-                                                                class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                                icon="infoCircle" tabindex="0" alt="Title Description"
-                                                                size="S" role="img" aria-label="Title Description">
-                                                            </coral-icon>
-                                                            <coral-tooltip target="_prev" placement="left"
-                                                                id="description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
-                                                                class="coral3-Tooltip coral3-Tooltip--info"
-                                                                aria-hidden="true" variant="info" tabindex="-1"
-                                                                role="tooltip" style="display: none;">
-
-                                                                <coral-tooltip-content>Additional information about the
-                                                                    image.</coral-tooltip-content>
-                                                            </coral-tooltip>
-                                                        </div>
-                                                        <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"
-                                                            style="display: none;">
-                                                            <coral-checkbox name="./titleValueFromDAM" value="true"
-                                                                checked=""
-                                                                labelledby="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
-                                                                data-foundation-validation="" data-validation=""
-                                                                class="coral-Form-field coral3-Checkbox is-disabled"
-                                                                aria-disabled="true" aria-required="false"
-                                                                aria-invalid="false" aria-readonly="false"
-                                                                data-previous-value="true" disabled=""><input
-                                                                    type="checkbox" handle="input"
-                                                                    class=" coral3-Checkbox-input" id="coral-id-518"
-                                                                    value="true" name="./titleValueFromDAM"
-                                                                    aria-labelledby="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
-                                                                    disabled="">
-                                                                <span class=" coral3-Checkbox-checkmark"
-                                                                    handle="checkbox"></span>
-                                                                <label class=" coral3-Checkbox-description"
-                                                                    handle="labelWrapper" for="coral-id-518">
-                                                                    <coral-checkbox-label>Get caption from DAM
-
-                                                                    </coral-checkbox-label>
-                                                                </label></coral-checkbox><input
-                                                                class="foundation-field-related" type="hidden"
-                                                                name="./titleValueFromDAM@Delete" disabled=""><input
-                                                                class="foundation-field-related" type="hidden"
-                                                                value="false" name="./titleValueFromDAM@DefaultValue"
-                                                                disabled=""><input class="foundation-field-related"
-                                                                type="hidden" value="true"
-                                                                name="./titleValueFromDAM@UseDefaultWhenMissing"
-                                                                disabled="">
-                                                            <coral-icon
-                                                                class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                                icon="infoCircle" tabindex="0" alt="Title Description"
-                                                                size="S" role="img" aria-label="Title Description">
-                                                            </coral-icon>
-                                                            <coral-tooltip target="_prev" placement="right"
-                                                                id="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
-                                                                class="coral3-Tooltip coral3-Tooltip--info"
-                                                                aria-hidden="true" variant="info" tabindex="-1"
-                                                                role="tooltip" style="display: none;">
-
-                                                                <coral-tooltip-content>When checked, populate the
-                                                                    image's
-                                                                    caption with the value of the dc:title metadata in
-                                                                    DAM.
-                                                                </coral-tooltip-content>
-                                                            </coral-tooltip>
-                                                        </div>
+                                        </coral-panel-content>
+                                    </coral-panel>
+                                    <coral-panel class="coral3-Panel" role="tabpanel" aria-hidden="true"
+                                        id="coral-id-527" aria-labelledby="coral-id-505">
+                                        <coral-panel-content>
+                                            <div class="foundation-layout-util-vmargin">
+                                                <div class="coral-FixedColumn foundation-layout-util-vmargin">
+                                                    <div class="coral-FixedColumn-column">
                                                         <div
                                                             class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
-                                                            <coral-checkbox name="./displayPopupTitle" value="true"
-                                                                checked=""
-                                                                labelledby="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0"
+                                                            <coral-checkbox name="./isDecorative" value="true"
+                                                                labelledby="description_e4422bce-35b6-4320-b92f-e9812912dc8b"
                                                                 data-foundation-validation="" data-validation=""
                                                                 class="coral-Form-field coral3-Checkbox"
                                                                 aria-disabled="false" aria-required="false"
                                                                 aria-invalid="false" aria-readonly="false"><input
                                                                     type="checkbox" handle="input"
-                                                                    class=" coral3-Checkbox-input" id="coral-id-520"
-                                                                    value="true" name="./displayPopupTitle"
-                                                                    aria-labelledby="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0">
+                                                                    class=" coral3-Checkbox-input" id="coral-id-510"
+                                                                    value="true" name="./isDecorative"
+                                                                    aria-labelledby="description_e4422bce-35b6-4320-b92f-e9812912dc8b">
                                                                 <span class=" coral3-Checkbox-checkmark"
                                                                     handle="checkbox"></span>
                                                                 <label class=" coral3-Checkbox-description"
-                                                                    handle="labelWrapper" for="coral-id-520">
-                                                                    <coral-checkbox-label>Display caption as pop-up
+                                                                    handle="labelWrapper" for="coral-id-510">
+                                                                    <coral-checkbox-label>Image is decorative
 
                                                                     </coral-checkbox-label>
                                                                 </label></coral-checkbox><input
                                                                 class="foundation-field-related" type="hidden"
-                                                                name="./displayPopupTitle@Delete"><input
+                                                                name="./isDecorative@Delete"><input
                                                                 class="foundation-field-related" type="hidden"
-                                                                value="false"
-                                                                name="./displayPopupTitle@DefaultValue"><input
+                                                                value="false" name="./isDecorative@DefaultValue"><input
                                                                 class="foundation-field-related" type="hidden"
                                                                 value="true"
-                                                                name="./displayPopupTitle@UseDefaultWhenMissing">
+                                                                name="./isDecorative@UseDefaultWhenMissing">
                                                             <coral-icon
                                                                 class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
                                                                 icon="infoCircle" tabindex="0" alt="Title Description"
                                                                 size="S" role="img" aria-label="Title Description">
                                                             </coral-icon>
                                                             <coral-tooltip target="_prev" placement="right"
-                                                                id="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0"
+                                                                id="description_e4422bce-35b6-4320-b92f-e9812912dc8b"
                                                                 class="coral3-Tooltip coral3-Tooltip--info"
                                                                 aria-hidden="true" variant="info" tabindex="-1"
                                                                 role="tooltip" style="display: none;">
 
-                                                                <coral-tooltip-content>When checked, the caption won't
-                                                                    be
-                                                                    displayed below the image, but as a pop-up displayed
+                                                                <coral-tooltip-content>Check if the image should be
+                                                                    ignored
                                                                     by
-                                                                    some browsers when hovering over the image.
+                                                                    assistive technology and therefore does not require
+                                                                    an
+                                                                    alternative text. This applies to decorative images
+                                                                    only.
                                                                 </coral-tooltip-content>
                                                             </coral-tooltip>
                                                         </div>
-                                                    </div>
-                                                    <div class="coral-Form-fieldwrapper cmp-image__editor-link"><label
-                                                            id="label_0325f3bd-4750-48c4-bf02-82ce0068b366"
-                                                            class="coral-Form-fieldlabel">Link</label>
-                                                        <foundation-autocomplete class="coral-Form-field"
-                                                            name="./linkURL"
-                                                            pickersrc="/mnt/overlay/granite/ui/content/coral/foundation/form/pathfield/picker.html?_charset_=utf-8&amp;path={value}&amp;root=%2fcontent&amp;filter=hierarchyNotFile&amp;selectionCount=single"
-                                                            labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
-                                                            data-foundation-validation="" role="combobox">
-                                                            <div class="foundation-autocomplete-inputgroupwrapper">
-                                                                <div class="coral-InputGroup"><input
-                                                                        is="coral-textfield"
-                                                                        class="coral3-Textfield coral-InputGroup-input"
-                                                                        autocomplete="off" placeholder=""
-                                                                        id="coral-id-522"
-                                                                        aria-labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
-                                                                        labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
-                                                                        aria-invalid="false"><span
-                                                                        class="coral-InputGroup-button"><button
-                                                                            is="coral-button"
-                                                                            class="coral3-Button coral3-Button--secondary"
-                                                                            size="M" variant="secondary"
-                                                                            title="Open Selection Dialog" type="button"
-                                                                            aria-label="Open Selection Dialog">
-                                                                            <coral-icon
-                                                                                class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select"
-                                                                                icon="select" size="S" role="img"
-                                                                                aria-label="select"></coral-icon>
-                                                                            <coral-button-label></coral-button-label>
-                                                                        </button></span></div>
+                                                        <div class="cmp-image__editor-alt coral-Well">
+                                                            <div class="coral-Form-fieldwrapper"><label
+                                                                    id="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
+                                                                    class="coral-Form-fieldlabel">Alternative Text
+                                                                    *</label><input
+                                                                    class="coral-Form-field coral3-Textfield"
+                                                                    type="text" name="./alt"
+                                                                    labelledby="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79 description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
+                                                                    value="" aria-required="true"
+                                                                    data-foundation-validation="" data-validation=""
+                                                                    is="coral-textfield" id="coral-id-512"
+                                                                    aria-labelledby="label_9410f5b4-20e9-4a3b-a33f-660b4ed24a79 description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
+                                                                    aria-invalid="false" data-previous-value="">
+                                                                <coral-icon
+                                                                    class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                    icon="infoCircle" tabindex="0"
+                                                                    alt="Title Description" size="S" role="img"
+                                                                    aria-label="Title Description">
+                                                                </coral-icon>
+                                                                <coral-tooltip target="_prev" placement="left"
+                                                                    id="description_9410f5b4-20e9-4a3b-a33f-660b4ed24a79"
+                                                                    class="coral3-Tooltip coral3-Tooltip--info"
+                                                                    aria-hidden="true" variant="info" tabindex="-1"
+                                                                    role="tooltip" style="display: none;">
+
+                                                                    <coral-tooltip-content>Textual alternative of the
+                                                                        meaning or
+                                                                        function of the image, for visually impaired
+                                                                        readers.
+                                                                    </coral-tooltip-content>
+                                                                </coral-tooltip>
                                                             </div>
-                                                            <coral-overlay foundation-autocomplete-suggestion=""
-                                                                class="foundation-picker-buttonlist coral3-Overlay"
-                                                                data-foundation-picker-buttonlist-src="/mnt/overlay/granite/ui/content/coral/foundation/form/pathfield/suggestion{.offset,limit}.html?_charset_=utf-8&amp;root=%2fcontent&amp;filter=hierarchyNotFile{&amp;query}"
-                                                                aria-hidden="true" style="display: none;">
-                                                            </coral-overlay>
-                                                            <coral-taglist foundation-autocomplete-value=""
-                                                                name="./linkURL" class="coral3-TagList"
-                                                                aria-disabled="false" role="listbox" aria-live="off"
-                                                                aria-atomic="false" aria-relevant="additions"
-                                                                aria-readonly="false" aria-invalid="false"
-                                                                aria-required="false">
-                                                                <coral-tag value="" tabindex="0"
-                                                                    class="coral3-Tag coral3-Tag--large" role="option"
-                                                                    aria-selected="false"><button is="coral-button"
-                                                                        class="coral3-Button coral3-Button--minimal coral3-Tag-removeButton"
-                                                                        size="M" variant="minimal" tracking="off"
-                                                                        handle="button" type="button" icon="close"
-                                                                        iconsize="XS" title="Remove" tabindex="-1"
-                                                                        coral-close="">
-                                                                        <coral-icon
-                                                                            class="coral3-Icon coral3-Icon--close coral3-Icon--sizeXS"
-                                                                            icon="close" size="XS" role="img"
-                                                                            aria-label="close"></coral-icon>
-                                                                        <coral-button-label></coral-button-label>
-                                                                    </button>
-                                                                    <coral-tag-label></coral-tag-label><input
-                                                                        handle="input" type="hidden" name="./linkURL"
-                                                                        value="">
-                                                                </coral-tag><object aria-hidden="true" tabindex="-1"
-                                                                    style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
-                                                                    type="text/html" data="about:blank">​</object>
-                                                            </coral-taglist><input class="foundation-field-related"
-                                                                type="hidden" name="./linkURL@Delete">
-                                                        </foundation-autocomplete>
-                                                        <coral-icon
-                                                            class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
-                                                            icon="infoCircle" tabindex="0" alt="Title Description"
-                                                            size="S" role="img" aria-label="Title Description">
-                                                        </coral-icon>
-                                                        <coral-tooltip target="_prev" placement="left"
-                                                            id="description_0325f3bd-4750-48c4-bf02-82ce0068b366"
-                                                            class="coral3-Tooltip coral3-Tooltip--info"
-                                                            aria-hidden="true" variant="info" tabindex="-1"
-                                                            role="tooltip" style="display: none;">
+                                                            <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"
+                                                                style="display: none;">
+                                                                <coral-checkbox name="./altValueFromDAM" value="true"
+                                                                    checked=""
+                                                                    labelledby="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
+                                                                    data-foundation-validation="" data-validation=""
+                                                                    class="coral-Form-field coral3-Checkbox is-disabled"
+                                                                    aria-disabled="true" aria-required="false"
+                                                                    aria-invalid="false" aria-readonly="false"
+                                                                    data-previous-value="true" disabled=""><input
+                                                                        type="checkbox" handle="input"
+                                                                        class=" coral3-Checkbox-input" id="coral-id-514"
+                                                                        value="true" name="./altValueFromDAM"
+                                                                        aria-labelledby="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
+                                                                        disabled="">
+                                                                    <span class=" coral3-Checkbox-checkmark"
+                                                                        handle="checkbox"></span>
+                                                                    <label class=" coral3-Checkbox-description"
+                                                                        handle="labelWrapper" for="coral-id-514">
+                                                                        <coral-checkbox-label>Get alternative text from
+                                                                            DAM
 
-                                                            <coral-tooltip-content>Make the image a link to another
-                                                                resource.</coral-tooltip-content>
-                                                        </coral-tooltip>
+                                                                        </coral-checkbox-label>
+                                                                    </label></coral-checkbox><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    name="./altValueFromDAM@Delete" disabled=""><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    value="false" name="./altValueFromDAM@DefaultValue"
+                                                                    disabled=""><input class="foundation-field-related"
+                                                                    type="hidden" value="true"
+                                                                    name="./altValueFromDAM@UseDefaultWhenMissing"
+                                                                    disabled="">
+                                                                <coral-icon
+                                                                    class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                    icon="infoCircle" tabindex="0"
+                                                                    alt="Title Description" size="S" role="img"
+                                                                    aria-label="Title Description">
+                                                                </coral-icon>
+                                                                <coral-tooltip target="_prev" placement="right"
+                                                                    id="description_7b396528-c8ea-43ac-902f-0e6275b430d1"
+                                                                    class="coral3-Tooltip coral3-Tooltip--info"
+                                                                    aria-hidden="true" variant="info" tabindex="-1"
+                                                                    role="tooltip" style="display: none;">
+
+                                                                    <coral-tooltip-content>When checked, populate the
+                                                                        image's
+                                                                        alt attribute with the value of the
+                                                                        dc:description
+                                                                        metadata in DAM.</coral-tooltip-content>
+                                                                </coral-tooltip>
+                                                            </div>
+                                                        </div>
+                                                        <div class="coral-Well">
+                                                            <div class="coral-Form-fieldwrapper"><label
+                                                                    id="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
+                                                                    class="coral-Form-fieldlabel">Caption</label><input
+                                                                    class="coral-Form-field coral3-Textfield"
+                                                                    type="text" name="./jcr:title"
+                                                                    labelledby="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
+                                                                    value="" data-foundation-validation=""
+                                                                    data-validation="" is="coral-textfield"
+                                                                    id="coral-id-516"
+                                                                    aria-labelledby="label_1439459e-9a53-4e7e-8e7e-a22de1f11fee description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
+                                                                    aria-invalid="false" data-previous-value="">
+                                                                <coral-icon
+                                                                    class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                    icon="infoCircle" tabindex="0"
+                                                                    alt="Title Description" size="S" role="img"
+                                                                    aria-label="Title Description">
+                                                                </coral-icon>
+                                                                <coral-tooltip target="_prev" placement="left"
+                                                                    id="description_1439459e-9a53-4e7e-8e7e-a22de1f11fee"
+                                                                    class="coral3-Tooltip coral3-Tooltip--info"
+                                                                    aria-hidden="true" variant="info" tabindex="-1"
+                                                                    role="tooltip" style="display: none;">
+
+                                                                    <coral-tooltip-content>Additional information about
+                                                                        the
+                                                                        image.</coral-tooltip-content>
+                                                                </coral-tooltip>
+                                                            </div>
+                                                            <div class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline"
+                                                                style="display: none;">
+                                                                <coral-checkbox name="./titleValueFromDAM" value="true"
+                                                                    checked=""
+                                                                    labelledby="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
+                                                                    data-foundation-validation="" data-validation=""
+                                                                    class="coral-Form-field coral3-Checkbox is-disabled"
+                                                                    aria-disabled="true" aria-required="false"
+                                                                    aria-invalid="false" aria-readonly="false"
+                                                                    data-previous-value="true" disabled=""><input
+                                                                        type="checkbox" handle="input"
+                                                                        class=" coral3-Checkbox-input" id="coral-id-518"
+                                                                        value="true" name="./titleValueFromDAM"
+                                                                        aria-labelledby="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
+                                                                        disabled="">
+                                                                    <span class=" coral3-Checkbox-checkmark"
+                                                                        handle="checkbox"></span>
+                                                                    <label class=" coral3-Checkbox-description"
+                                                                        handle="labelWrapper" for="coral-id-518">
+                                                                        <coral-checkbox-label>Get caption from DAM
+
+                                                                        </coral-checkbox-label>
+                                                                    </label></coral-checkbox><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    name="./titleValueFromDAM@Delete" disabled=""><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    value="false"
+                                                                    name="./titleValueFromDAM@DefaultValue"
+                                                                    disabled=""><input class="foundation-field-related"
+                                                                    type="hidden" value="true"
+                                                                    name="./titleValueFromDAM@UseDefaultWhenMissing"
+                                                                    disabled="">
+                                                                <coral-icon
+                                                                    class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                    icon="infoCircle" tabindex="0"
+                                                                    alt="Title Description" size="S" role="img"
+                                                                    aria-label="Title Description">
+                                                                </coral-icon>
+                                                                <coral-tooltip target="_prev" placement="right"
+                                                                    id="description_5bf84f27-a8d9-45e5-a631-871c0c3f1e90"
+                                                                    class="coral3-Tooltip coral3-Tooltip--info"
+                                                                    aria-hidden="true" variant="info" tabindex="-1"
+                                                                    role="tooltip" style="display: none;">
+
+                                                                    <coral-tooltip-content>When checked, populate the
+                                                                        image's
+                                                                        caption with the value of the dc:title metadata
+                                                                        in
+                                                                        DAM.
+                                                                    </coral-tooltip-content>
+                                                                </coral-tooltip>
+                                                            </div>
+                                                            <div
+                                                                class="coral-Form-fieldwrapper coral-Form-fieldwrapper--singleline">
+                                                                <coral-checkbox name="./displayPopupTitle" value="true"
+                                                                    checked=""
+                                                                    labelledby="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0"
+                                                                    data-foundation-validation="" data-validation=""
+                                                                    class="coral-Form-field coral3-Checkbox"
+                                                                    aria-disabled="false" aria-required="false"
+                                                                    aria-invalid="false" aria-readonly="false"><input
+                                                                        type="checkbox" handle="input"
+                                                                        class=" coral3-Checkbox-input" id="coral-id-520"
+                                                                        value="true" name="./displayPopupTitle"
+                                                                        aria-labelledby="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0">
+                                                                    <span class=" coral3-Checkbox-checkmark"
+                                                                        handle="checkbox"></span>
+                                                                    <label class=" coral3-Checkbox-description"
+                                                                        handle="labelWrapper" for="coral-id-520">
+                                                                        <coral-checkbox-label>Display caption as pop-up
+
+                                                                        </coral-checkbox-label>
+                                                                    </label></coral-checkbox><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    name="./displayPopupTitle@Delete"><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    value="false"
+                                                                    name="./displayPopupTitle@DefaultValue"><input
+                                                                    class="foundation-field-related" type="hidden"
+                                                                    value="true"
+                                                                    name="./displayPopupTitle@UseDefaultWhenMissing">
+                                                                <coral-icon
+                                                                    class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                    icon="infoCircle" tabindex="0"
+                                                                    alt="Title Description" size="S" role="img"
+                                                                    aria-label="Title Description">
+                                                                </coral-icon>
+                                                                <coral-tooltip target="_prev" placement="right"
+                                                                    id="description_39d5dc51-02e1-4c32-acf2-0dab3281f5b0"
+                                                                    class="coral3-Tooltip coral3-Tooltip--info"
+                                                                    aria-hidden="true" variant="info" tabindex="-1"
+                                                                    role="tooltip" style="display: none;">
+
+                                                                    <coral-tooltip-content>When checked, the caption
+                                                                        won't
+                                                                        be
+                                                                        displayed below the image, but as a pop-up
+                                                                        displayed
+                                                                        by
+                                                                        some browsers when hovering over the image.
+                                                                    </coral-tooltip-content>
+                                                                </coral-tooltip>
+                                                            </div>
+                                                        </div>
+                                                        <div class="coral-Form-fieldwrapper cmp-image__editor-link">
+                                                            <label id="label_0325f3bd-4750-48c4-bf02-82ce0068b366"
+                                                                class="coral-Form-fieldlabel">Link</label>
+                                                            <foundation-autocomplete class="coral-Form-field"
+                                                                name="./linkURL"
+                                                                pickersrc="/mnt/overlay/granite/ui/content/coral/foundation/form/pathfield/picker.html?_charset_=utf-8&amp;path={value}&amp;root=%2fcontent&amp;filter=hierarchyNotFile&amp;selectionCount=single"
+                                                                labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
+                                                                data-foundation-validation="" role="combobox">
+                                                                <div class="foundation-autocomplete-inputgroupwrapper">
+                                                                    <div class="coral-InputGroup"><input
+                                                                            is="coral-textfield"
+                                                                            class="coral3-Textfield coral-InputGroup-input"
+                                                                            autocomplete="off" placeholder=""
+                                                                            id="coral-id-522"
+                                                                            aria-labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
+                                                                            labelledby="label_0325f3bd-4750-48c4-bf02-82ce0068b366 description_0325f3bd-4750-48c4-bf02-82ce0068b366"
+                                                                            aria-invalid="false"><span
+                                                                            class="coral-InputGroup-button"><button
+                                                                                is="coral-button"
+                                                                                class="coral3-Button coral3-Button--secondary"
+                                                                                size="M" variant="secondary"
+                                                                                title="Open Selection Dialog"
+                                                                                type="button"
+                                                                                aria-label="Open Selection Dialog">
+                                                                                <coral-icon
+                                                                                    class="coral3-Icon coral3-Icon--sizeS coral3-Icon--select"
+                                                                                    icon="select" size="S" role="img"
+                                                                                    aria-label="select"></coral-icon>
+                                                                                <coral-button-label>
+                                                                                </coral-button-label>
+                                                                            </button></span></div>
+                                                                </div>
+                                                                <coral-overlay foundation-autocomplete-suggestion=""
+                                                                    class="foundation-picker-buttonlist coral3-Overlay"
+                                                                    data-foundation-picker-buttonlist-src="/mnt/overlay/granite/ui/content/coral/foundation/form/pathfield/suggestion{.offset,limit}.html?_charset_=utf-8&amp;root=%2fcontent&amp;filter=hierarchyNotFile{&amp;query}"
+                                                                    aria-hidden="true" style="display: none;">
+                                                                </coral-overlay>
+                                                                <coral-taglist foundation-autocomplete-value=""
+                                                                    name="./linkURL" class="coral3-TagList"
+                                                                    aria-disabled="false" role="listbox" aria-live="off"
+                                                                    aria-atomic="false" aria-relevant="additions"
+                                                                    aria-readonly="false" aria-invalid="false"
+                                                                    aria-required="false">
+                                                                    <coral-tag value="" tabindex="0"
+                                                                        class="coral3-Tag coral3-Tag--large"
+                                                                        role="option" aria-selected="false"><button
+                                                                            is="coral-button"
+                                                                            class="coral3-Button coral3-Button--minimal coral3-Tag-removeButton"
+                                                                            size="M" variant="minimal" tracking="off"
+                                                                            handle="button" type="button" icon="close"
+                                                                            iconsize="XS" title="Remove" tabindex="-1"
+                                                                            coral-close="">
+                                                                            <coral-icon
+                                                                                class="coral3-Icon coral3-Icon--close coral3-Icon--sizeXS"
+                                                                                icon="close" size="XS" role="img"
+                                                                                aria-label="close"></coral-icon>
+                                                                            <coral-button-label></coral-button-label>
+                                                                        </button>
+                                                                        <coral-tag-label></coral-tag-label><input
+                                                                            handle="input" type="hidden"
+                                                                            name="./linkURL" value="">
+                                                                    </coral-tag><object aria-hidden="true" tabindex="-1"
+                                                                        style="display:block; position:absolute; top:0; left:0; height:100%; width:100%; opacity:0; overflow:hidden; z-index:-100;"
+                                                                        type="text/html" data="about:blank">​</object>
+                                                                </coral-taglist><input class="foundation-field-related"
+                                                                    type="hidden" name="./linkURL@Delete">
+                                                            </foundation-autocomplete>
+                                                            <coral-icon
+                                                                class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS"
+                                                                icon="infoCircle" tabindex="0" alt="Title Description"
+                                                                size="S" role="img" aria-label="Title Description">
+                                                            </coral-icon>
+                                                            <coral-tooltip target="_prev" placement="left"
+                                                                id="description_0325f3bd-4750-48c4-bf02-82ce0068b366"
+                                                                class="coral3-Tooltip coral3-Tooltip--info"
+                                                                aria-hidden="true" variant="info" tabindex="-1"
+                                                                role="tooltip" style="display: none;">
+
+                                                                <coral-tooltip-content>Make the image a link to another
+                                                                    resource.</coral-tooltip-content>
+                                                            </coral-tooltip>
+                                                        </div>
+                                                        <coral-checkbox name="./newTab" value="true"
+                                                            data-foundation-validation="" data-validation=""
+                                                            class="coral-Form-field coral3-Checkbox"
+                                                            aria-disabled="false" aria-required="false"
+                                                            aria-invalid="false" aria-readonly="false">
+                                                            <input type="checkbox" handle="input"
+                                                                class=" coral3-Checkbox-input" id="coral-id-524"
+                                                                value="true" name="./newTab">
+                                                            <span class=" coral3-Checkbox-checkmark"
+                                                                handle="checkbox"></span>
+                                                            <label class=" coral3-Checkbox-description"
+                                                                handle="labelWrapper" for="coral-id-524">
+                                                                <coral-checkbox-label>Open in new tab
+
+                                                                </coral-checkbox-label>
+                                                            </label></coral-checkbox><input
+                                                            class="foundation-field-related" type="hidden"
+                                                            name="./newTab@Delete"><input
+                                                            class="foundation-field-related" type="hidden" value="false"
+                                                            name="./newTab@DefaultValue"><input
+                                                            class="foundation-field-related" type="hidden" value="true"
+                                                            name="./newTab@UseDefaultWhenMissing">
                                                     </div>
-                                                    <coral-checkbox name="./newTab" value="true"
-                                                        data-foundation-validation="" data-validation=""
-                                                        class="coral-Form-field coral3-Checkbox" aria-disabled="false"
-                                                        aria-required="false" aria-invalid="false"
-                                                        aria-readonly="false">
-                                                        <input type="checkbox" handle="input"
-                                                            class=" coral3-Checkbox-input" id="coral-id-524"
-                                                            value="true" name="./newTab">
-                                                        <span class=" coral3-Checkbox-checkmark"
-                                                            handle="checkbox"></span>
-                                                        <label class=" coral3-Checkbox-description"
-                                                            handle="labelWrapper" for="coral-id-524">
-                                                            <coral-checkbox-label>Open in new tab
-
-                                                            </coral-checkbox-label>
-                                                        </label></coral-checkbox><input class="foundation-field-related"
-                                                        type="hidden" name="./newTab@Delete"><input
-                                                        class="foundation-field-related" type="hidden" value="false"
-                                                        name="./newTab@DefaultValue"><input
-                                                        class="foundation-field-related" type="hidden" value="true"
-                                                        name="./newTab@UseDefaultWhenMissing">
                                                 </div>
                                             </div>
-                                        </div>
-                                    </coral-panel-content>
-                                </coral-panel>
-                            </coral-panelstack>
-                        </coral-tabview>
-                    </div>
-                </coral-dialog-content>
-                <coral-dialog-footer class="coral3-Dialog-footer"></coral-dialog-footer>
-            </form>
-        </div>
-        <div coral-tabcapture="intermediate" tabindex="0"></div>
-        <div coral-tabcapture="bottom" tabindex="0"></div>
-    </coral-dialog>
-</body>
+                                        </coral-panel-content>
+                                    </coral-panel>
+                                </coral-panelstack>
+                            </coral-tabview>
+                        </div>
+                    </coral-dialog-content>
+                    <coral-dialog-footer class="coral3-Dialog-footer"></coral-dialog-footer>
+                </form>
+            </div>
+            <div coral-tabcapture="intermediate" tabindex="0"></div>
+            <div coral-tabcapture="bottom" tabindex="0"></div>
+        </coral-dialog>
+    </body>
 
+{% endblock body %}
+    
 </html>
