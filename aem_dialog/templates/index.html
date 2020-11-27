@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,9 @@
         <link rel="stylesheet" href="{% static 'css/core.css'  %}" type="text/css">
         <link rel="stylesheet" href="{% static 'css/all.css'  %}" type="text/css">
         <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         {% comment %} <script type="text/javascript" src="{% static 'js/coralui3.js'  %}"></script>
         <script type="text/javascript" src="{% static 'js/all.js'  %}"></script>
@@ -17,7 +21,28 @@
         <script type="text/javascript" src="{% static 'js/jquery.min.js'  %}"></script>
     </head>
 
-    {% block body %}
-    {% endblock body %}
-    
+    <body>
+
+        <div class="container-fluid" style="padding:10px">
+            <div class="row">
+                <div class="col-md-4" style="border: 1px solid grey">
+                    <h4 class="alert-heading"> Components </h4>
+                    <hr>
+                    {% block fileList %}
+                    {% endblock fileList %}
+                    <i class="fa fa-plus-circle fa-4 align-center" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-8">
+                    <h4 class="alert-heading"> Dialog Display </h4>
+                    <hr>
+                    {% block body %}
+                    {% endblock body %}
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
 </html>

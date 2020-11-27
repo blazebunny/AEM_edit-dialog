@@ -1,12 +1,12 @@
 from xml.dom import minidom 
 from tkinter import * 
 from tkinter.ttk import *
-
 from tkinterhtml import HtmlFrame
 
 from PIL import ImageTk, Image
 
 import os  
+import glob
 
 def rootFunction():
 
@@ -114,6 +114,17 @@ def movefunction(event):
     # reset the starting point for the next move
     root.dragInfo["xCoord"] = winX
     root.dragInfo["yCoord"] = winY
+
+def getFilesList(rootFolder):
+    for root, dirs, files in os.walk("E:\Codecs\AEM Edit Dialog\AEM_edit-dialog", topdown = False):
+	    for name in files:
+		    if ".xml" in name:
+			    f = open(os.path.join(root, name), "r")
+			    if "cq:Component" in f.read():
+				    print (root.split("\\")[-1])
+				    print("Files name ",os.path.join(root, name))
+			    f.close()
+
 
 # Variables
 fram1 = None
